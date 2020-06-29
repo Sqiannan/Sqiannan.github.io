@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>我的第二篇文章</title>
+    <url>/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>内容</p>
+]]></content>
+  </entry>
+  <entry>
     <title>CSS的布局方法</title>
     <url>/2020/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>1、    两列布局：<br>1.1    左边宽度固定，右边宽度自适应<br>第一种方法：左边设置浮动，右边设置margin-left<br>Js代码：</p>
@@ -26,11 +34,8 @@
 ]]></content>
   </entry>
   <entry>
-    <title>我的第二篇文章</title>
-    <url>/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>内容</p>
-]]></content>
+    <title>disanpian</title>
+    <url>/2020/06/29/disanpian/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
