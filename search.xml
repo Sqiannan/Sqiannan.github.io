@@ -1,76 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>CSS的布局方法</title>
-    <url>/2020/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>1、    两列布局：<br>1.1    左边宽度固定，右边宽度自适应<br>第一种方法：左边设置浮动，右边设置margin-left<br>Js代码：<br>.left{<br>      width: 400px;<br>      height:100px;<br>      background-color: red;<br>      float:left;<br>}<br>    .right{<br>      background-color: blue;<br>      margin-left: 400px;<br>      height:100px;<br>}<br>Html代码：</p>
-<div class="outer">
-      <div class="left"></div>
-      <div class="right"></div>
-</div>
-第二种方法：设置相对定位和绝对定位
-.outer{
-      height:100px;
-      position:relative;
-      border: 1px solid red;
-    }
-.left{
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 200px;
-height: 100px;
-background-color: antiquewhite;
-}
-    .right{
-      margin-left: 200px;
-      height: 100px;
-background-color: aquamarine;
-}
-1.2    右边宽度固定，左边宽度自适应：
-第一种：左右都浮动
-
-
-<p>.left{<br>height:100px;<br>width: 100%;<br>background-color: aqua;<br>float: left;<br>margin-right: -400px;<br>}<br>.right{<br>    width: 400px;<br>    height: 100px;<br>background-color:blue;<br>float: right;<br>margin-left: -400px;<br>    }<br>第二种：父元素相对，右边绝对，左边margin-right<br>.outer{<br>position: relative;<br>}<br>.left{<br>margin-right: 400px;<br>height: 300px;<br>background-color: red;<br> }<br>.right{<br>position: absolute;<br> top: 0;<br> right: 0;<br> height: 300px;<br> width: 400px;<br> background-color: blue;<br> }<br>2、    三栏<br>2.1 两侧定宽，中间自适应<br>第一种方法：左右设置为绝对定位，中间使用margin属性设置留出左右两边的距离，中间设置为100%<br>*{<br>      margin: 0;<br>    }<br>    .left{<br>      width: 100px;<br>      height: 400px;<br>background-color: red;<br>      position: absolute;</p>
-<pre><code>  top: 0;
-  left: 0;
-}</code></pre><p>.center{<br>    margin: 0 100px;<br>    height: 400px;<br>    width: 100%;<br>    background-color: #000000;<br>            }<br>.right{<br>    width: 100px;<br>    height: 400px;<br>    background-color: red;<br>    position: absolute;<br>    top: 0;<br>    right: 0;<br>}<br>Html代码：</p>
-<div class="left"></div>
-<div class="center"></div>
-<div class="right"></div>
-第二种方法：左边左浮动，右边右浮动，中间设置margin，html代码里面中间栏是最后一个。
-.left{
-    width: 100px;
-    height: 400px;
-    background-color: red;
-    float: left;
-}
-.center{
-    height: 400px;
-    width: 100%;
-    background-color: #000000;
-    margin:0 100px;
-}
-.right{
-    width: 100px;
-    height: 400px;
-    background-color: red;
-    float: right;
-}
-html代码：
-    <div class="left"></div>
-   <div class="right"></div>
-   <div class="center"></div>
-
-
-]]></content>
-  </entry>
-  <entry>
     <title>我的第二篇文章</title>
     <url>/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
 <h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
 <h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>内容</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>CSS的布局方法</title>
+    <url>/2020/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>1、    两列布局：<br>1.1    左边宽度固定，右边宽度自适应<br>第一种方法：左边设置浮动，右边设置margin-left<br>Js代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.left&#123; <br>  width: 400px;<br>  height:100px;<br>  background-color: red;<br>  float:left;<br>&#125;<br>.right&#123;<br>  background-color: blue;<br>  margin-left: 400px;<br>  height:100px;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Html代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"outer"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>第二种方法：设置相对定位和绝对定位</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.outer&#123; <br>  height:100px;<br>  position:relative;<br>  border: 1px solid red;<br>&#125;<br>.left&#123;<br>  position: absolute;<br>  left: 0;<br>  top: 0;<br>  width: 200px;<br>  height: 100px;<br>  background-color: antiquewhite;<br>&#125;<br>.right&#123;<br>  margin-left: 200px;<br>  height: 100px;<br>  background-color: aquamarine;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>1.2    右边宽度固定，左边宽度自适应：<br>第一种：左右都浮动</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.left&#123;<br>  height:100px;<br>  width: 100%;<br>  background-color: aqua;<br>  float: left;<br>  margin-right: -400px;<br>&#125;<br>.right&#123; <br>  width: 400px;<br>  height: 100px;<br>  background-color:blue;<br>  float: right;<br>  margin-left: -400px;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>第二种：父元素相对，右边绝对，左边margin-right</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.outer&#123;<br>  position: relative;<br>&#125;<br>.left&#123;<br>  margin-right: 400px;<br>  height: 300px;<br>  background-color: red;<br>&#125;<br>.right&#123;<br>  position: absolute;<br>  top: 0;<br>  right: 0;<br>  height: 300px;<br>  width: 400px;<br>  background-color: blue;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>2、    三栏<br>2.1 两侧定宽，中间自适应<br>第一种方法：左右设置为绝对定位，中间使用margin属性设置留出左右两边的距离，中间设置为100%</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">*&#123;<br>  margin: 0;<br>&#125;<br>.left&#123;<br>  width: 100px;<br>  height: 400px;<br>  background-color: red;<br>  position: absolute;<br>  top: 0;<br>  left: 0;<br>&#125;<br>.center&#123;<br>  margin: 0 100px;  <br>  height: 400px; <br>  width: 100%;<br>  background-color: #000000;<br>&#125;<br>.right&#123;<br>  width: 100px;<br>  height: 400px;<br>  background-color: red;<br>  position: absolute;<br>  top: 0;<br>  right: 0;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Html代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"center"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>第二种方法：左边左浮动，右边右浮动，中间设置margin，html代码里面中间栏是最后一个。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.left&#123; <br>  width: 100px;<br>  height: 400px;<br>  background-color: red;<br>  float: left;<br>&#125;<br>.center&#123;<br>  height: 400px;<br>  width: 100%;<br>  background-color: #000000;<br>  margin:0 100px;<br>&#125;<br>.right&#123;<br>  width: 100px;<br>  height: 400px;<br>  background-color: red;<br>  float: right;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>html代码：</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></code></pre>
 ]]></content>
   </entry>
 </search>
