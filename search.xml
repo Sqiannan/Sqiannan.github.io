@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>disanpian</title>
-    <url>/2020/06/29/disanpian/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>CSS的布局方法</title>
     <url>/2020/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>1、    两列布局：<br>1.1    左边宽度固定，右边宽度自适应<br>第一种方法：左边设置浮动，右边设置margin-left<br>Js代码：</p>
+    <content><![CDATA[<p>两列布局（左固定，右自适应和左自适应，右固定）和三列布局（两侧定宽，中间自适应）</p>
+<a id="more"></a>
+<h2 id="1、-两列布局："><a href="#1、-两列布局：" class="headerlink" title="1、    两列布局："></a>1、    两列布局：</h2><p>1.1    左边宽度固定，右边宽度自适应<br>第一种方法：左边设置浮动，右边设置margin-left<br>Js代码：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.left&#123; <br>  width: 400px;<br>  height:100px;<br>  background-color: red;<br>  float:left;<br>&#125;<br>.right&#123;<br>  background-color: blue;<br>  margin-left: 400px;<br>  height:100px;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>Html代码：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"outer"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
@@ -18,7 +15,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.left&#123;<br>  height:100px;<br>  width: 100%;<br>  background-color: aqua;<br>  float: left;<br>  margin-right: -400px;<br>&#125;<br>.right&#123; <br>  width: 400px;<br>  height: 100px;<br>  background-color:blue;<br>  float: right;<br>  margin-left: -400px;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>第二种：父元素相对，右边绝对，左边margin-right</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.outer&#123;<br>  position: relative;<br>&#125;<br>.left&#123;<br>  margin-right: 400px;<br>  height: 300px;<br>  background-color: red;<br>&#125;<br>.right&#123;<br>  position: absolute;<br>  top: 0;<br>  right: 0;<br>  height: 300px;<br>  width: 400px;<br>  background-color: blue;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>2、    三栏<br>2.1 两侧定宽，中间自适应<br>第一种方法：左右设置为绝对定位，中间使用margin属性设置留出左右两边的距离，中间设置为100%</p>
+<h2 id="2、-三栏"><a href="#2、-三栏" class="headerlink" title="2、    三栏"></a>2、    三栏</h2><p>2.1 两侧定宽，中间自适应<br>第一种方法：左右设置为绝对定位，中间使用margin属性设置留出左右两边的距离，中间设置为100%</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">*&#123;<br>  margin: 0;<br>&#125;<br>.left&#123;<br>  width: 100px;<br>  height: 400px;<br>  background-color: red;<br>  position: absolute;<br>  top: 0;<br>  left: 0;<br>&#125;<br>.center&#123;<br>  margin: 0 100px;  <br>  height: 400px; <br>  width: 100%;<br>  background-color: #000000;<br>&#125;<br>.right&#123;<br>  width: 100px;<br>  height: 400px;<br>  background-color: red;<br>  position: absolute;<br>  top: 0;<br>  right: 0;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>Html代码：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"center"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
@@ -29,13 +26,35 @@
 <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
 <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></code></pre>
 ]]></content>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
   </entry>
   <entry>
-    <title>我的第二篇文章</title>
+    <title>disanpian</title>
+    <url>/2020/06/29/disanpian/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>hexo yilia 博客增加菜单分类</title>
     <url>/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>内容</p>
+    <content><![CDATA[<p>基于hexo+yilia主题搭建的博客，如果要添加菜单分类，需要在根目录下执行new page “分类名字”，然后在根目录下的_config.yml文件中的menu下添加类名。</p>
+<a id="more"></a>
+<p>具体步骤：</p>
+<ol>
+<li><p>创建分类名字<br>在根目录下执行git bash，输入hexo new page “学习笔记”</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs git">sqiannan@DESKTOP-TPIHHKM MINGW64 &#x2F;d&#x2F;blog<br>$ hexo page &quot;学习笔记&quot;<br>(node:15352) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency<br>(Use &#96;node --trace-warnings ...&#96; to show where the warning was created)<br>(node:15352) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency<br>(node:15352) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency<br>(node:15352) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency<br>(node:15352) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency<br>(node:15352) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency<br>Usage: hexo &lt;command&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>修改_config.yml<br>打开themes_config.yml，在menu下添加学习笔记: \tags\学习笔记</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown"><span class="hljs-section"># Header</span><br><br>menu:<br>  主页: /<br>  随笔: /tags/随笔/<br>  学习笔记: /tags/学习笔记/<br></code></pre></td></tr></table></figure></li>
+<li><p>添加文章的tags<br>打开自己的文章，在头部的tags: 后添加类名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">---<br>title: hexo yilia 博客增加菜单分类<br>date: 2020-06-28 15:24:30<br>description: hexo yilia 博客增加菜单分类<br>tags:<br>       - 学习笔记<br>---<br></code></pre></td></tr></table></figure>
+
+</li>
+</ol>
 ]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
   </entry>
 </search>
