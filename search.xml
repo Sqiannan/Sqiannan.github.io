@@ -3,11 +3,41 @@
   <entry>
     <title>markdown代码块高亮提示</title>
     <url>/2020/06/29/disanpian/</url>
-    <content><![CDATA[<a id="more"></a>
+    <content><![CDATA[<p>三种方法</p>
+<a id="more"></a>
 <p>第一种：</p>
 <pre><code>&lt;pro&gt;&lt;code&gt;代码&lt;/code&gt;&lt;/pro&gt;</code></pre><p>第二种：</p>
 <pre><code>```代码类型 （代码）```</code></pre><p>第三种：</p>
 <p>空一行<br>(4个空格)代码</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端面试</title>
+    <url>/2020/06/30/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>hexo yilia 博客增加菜单分类</title>
+    <url>/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>基于hexo+yilia主题搭建的博客，如果要添加菜单分类，需要在根目录下执行new page “分类名字”，然后在根目录下的_config.yml文件中的menu下添加类名。</p>
+<a id="more"></a>
+<p>具体步骤：</p>
+<ol>
+<li>创建分类名字<br>在根目录下执行<code>git bash</code>，输入<code>hexo new page</code> “学习笔记”</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">sqiannan@DESKTOP-TPIHHKM MINGW64 &#x2F;d&#x2F;blog<br>$ hexo page &quot;学习笔记&quot;<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>修改_config.yml<br>打开themes_config.yml，在menu下添加学习笔记: \tags\学习笔记</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain"># Header<br>menu:<br>  主页: &#x2F;<br>  随笔: &#x2F;tags&#x2F;随笔&#x2F;<br>  学习笔记: &#x2F;tags&#x2F;学习笔记&#x2F;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>添加文章的tags<br>打开自己的文章，在头部的tags: 后添加类名</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">---<br>title: hexo yilia 博客增加菜单分类<br>date: 2020-06-28 15:24:30<br>description: hexo yilia 博客增加菜单分类<br>tags:<br>       - 学习笔记<br>---<br></code></pre></td></tr></table></figure>
+
 ]]></content>
       <tags>
         <tag>随笔</tag>
@@ -41,30 +71,6 @@
 ]]></content>
       <tags>
         <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo yilia 博客增加菜单分类</title>
-    <url>/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>基于hexo+yilia主题搭建的博客，如果要添加菜单分类，需要在根目录下执行new page “分类名字”，然后在根目录下的_config.yml文件中的menu下添加类名。</p>
-<a id="more"></a>
-<p>具体步骤：</p>
-<ol>
-<li>创建分类名字<br>在根目录下执行<code>git bash</code>，输入<code>hexo new page</code> “学习笔记”</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">sqiannan@DESKTOP-TPIHHKM MINGW64 &#x2F;d&#x2F;blog<br>$ hexo page &quot;学习笔记&quot;<br></code></pre></td></tr></table></figure>
-<ol start="2">
-<li>修改_config.yml<br>打开themes_config.yml，在menu下添加学习笔记: \tags\学习笔记</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain"># Header<br>menu:<br>  主页: &#x2F;<br>  随笔: &#x2F;tags&#x2F;随笔&#x2F;<br>  学习笔记: &#x2F;tags&#x2F;学习笔记&#x2F;<br></code></pre></td></tr></table></figure>
-<ol start="3">
-<li>添加文章的tags<br>打开自己的文章，在头部的tags: 后添加类名</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">---<br>title: hexo yilia 博客增加菜单分类<br>date: 2020-06-28 15:24:30<br>description: hexo yilia 博客增加菜单分类<br>tags:<br>       - 学习笔记<br>---<br></code></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
 </search>
