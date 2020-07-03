@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>hexo yilia 博客增加菜单分类 | 博客</title>
+  <title>CSS的块级元素、行内元素和行内块元素 | 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo yilia 博客增加菜单分类">
+  <meta name="description" content="元素是文档结构的基础，不同的元素显示方式是不同的，块级元素独自占据一行，行内元素可多个放置在一行。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo yilia 博客增加菜单分类">
-<meta property="og:url" content="http://yoursite.com/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:title" content="CSS的块级元素、行内元素和行内块元素">
+<meta property="og:url" content="http://yoursite.com/2020/07/03/CSS%E7%9A%84%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="hexo yilia 博客增加菜单分类">
-<meta property="article:published_time" content="2020-06-28T07:24:30.000Z">
-<meta property="article:modified_time" content="2020-06-29T17:37:33.366Z">
+<meta property="og:description" content="元素是文档结构的基础，不同的元素显示方式是不同的，块级元素独自占据一行，行内元素可多个放置在一行。">
+<meta property="article:published_time" content="2020-07-03T13:12:40.000Z">
+<meta property="article:modified_time" content="2020-07-03T13:53:04.741Z">
 <meta property="article:author" content="邵倩楠">
-<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="博客" type="application/atom+xml">
@@ -148,42 +148,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第二篇文章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-CSS的块级元素" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      hexo yilia 博客增加菜单分类
+      CSS的块级元素、行内元素和行内块元素
     </h1>
   
 
         
-        <a href="/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-06-28T07:24:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
+        <a href="/2020/07/03/CSS%E7%9A%84%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0/" class="archive-article-date">
+  	<time datetime="2020-07-03T13:12:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>基于hexo+yilia主题搭建的博客，如果要添加菜单分类，需要在根目录下执行new page “分类名字”，然后在根目录下的_config.yml文件中的menu下添加类名。</p>
+        <p>元素是文档结构的基础，不同的元素显示方式是不同的，块级元素独自占据一行，行内元素可多个放置在一行。</p>
 <a id="more"></a>
-<p>具体步骤：</p>
-<ol>
-<li>创建分类名字<br>在根目录下执行<code>git bash</code>，输入<code>hexo new page</code> “学习笔记”</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">sqiannan@DESKTOP-TPIHHKM MINGW64 &#x2F;d&#x2F;blog<br>$ hexo page &quot;学习笔记&quot;<br></code></pre></td></tr></table></figure>
-<ol start="2">
-<li>修改_config.yml<br>打开themes_config.yml，在menu下添加学习笔记: \tags\学习笔记</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain"># Header<br>menu:<br>  主页: &#x2F;<br>  随笔: &#x2F;tags&#x2F;随笔&#x2F;<br>  学习笔记: &#x2F;tags&#x2F;学习笔记&#x2F;<br></code></pre></td></tr></table></figure>
-<ol start="3">
-<li>添加文章的tags<br>打开自己的文章，在头部的tags: 后添加类名</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plain">---<br>title: hexo yilia 博客增加菜单分类<br>date: 2020-06-28 15:24:30<br>description: hexo yilia 博客增加菜单分类<br>tags:<br>       - 学习笔记<br>---<br></code></pre></td></tr></table></figure>
-
+<h2 id="块级元素-block"><a href="#块级元素-block" class="headerlink" title="块级元素 block"></a>块级元素 block</h2><p>可以自定义宽度和高度，独自占据一行，默认宽度为父元素宽度，可以容纳块级元素和行内元素。<br>常见的块级元素有：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;address&gt;<br>&lt;caption&gt;<br>&lt;dd&gt;<br>&lt;div&gt;<br>&lt;h1&gt;~&lt;h6&gt;<br>&lt;ol&gt;<br>&lt;ul&gt;<br>&lt;li&gt;<br>&lt;table&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="行内元素-inline"><a href="#行内元素-inline" class="headerlink" title="行内元素 inline"></a>行内元素 inline</h2><p>不可以设置宽度和高度，可以和其他行内元素位于同一行，一般不可以包含块级元素。<br>高度一般由元素内部的字体或图片大小决定，宽度由内容的长度决定，高度、宽度、行高、顶部和底部边距不可设置。<br>常见的行内元素有：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;a&gt;<br>&lt;b&gt;   &#x2F;&#x2F;字体加粗<br>&lt;i&gt;   &#x2F;&#x2F;斜体文字效果<br>&lt;br&gt;  <br>&lt;img&gt;<br>&lt;input&gt;<br>&lt;span&gt;<br>&lt;textarea&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="行内块级元素-inline-block"><a href="#行内块级元素-inline-block" class="headerlink" title="行内块级元素 inline-block"></a>行内块级元素 inline-block</h2><p>既有块级元素特点又有行内元素特点，可以自由设置元素宽度和高度，也可以一行放置多个行内块级元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;input&gt;<br>&lt;img&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="元素类型转换display"><a href="#元素类型转换display" class="headerlink" title="元素类型转换display"></a>元素类型转换display</h2><p>display:block  定义元素为块级元素<br>display:inline  定义元素为行内元素<br>display:inline-block  定义元素为行内块级元素</p>
 
       
 
@@ -230,7 +223,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
         		</li>
       		
 		</ul>
@@ -286,7 +279,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/03/CSS%E7%9A%84%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +293,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/29/disanpian/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          markdown代码块高亮提示
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CSS的布局方法</div>
+    <a href="/2020/07/01/%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">事件冒泡</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -350,7 +334,7 @@
 <script src="https://www.wenjunjiang.win/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/",
+  id: "http://yoursite.com/2020/07/03/CSS%E7%9A%84%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0/",
   owner: 'Sqiannan',
   repo: 'sqiannan.github.io',
   oauth: {
