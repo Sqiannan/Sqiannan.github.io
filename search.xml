@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Vue的条件判断</title>
+    <url>/2020/07/04/Vue%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93/</url>
+    <content><![CDATA[<p>Vue中的条件判断有v-if、v-else、v-else-if，下面介绍一下条件判断并做一个小案例。</p>
+<a id="more"></a>
+<h2 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h2><p>v-if判断一个元素是否渲染，当条件为true时渲染，为false时不会有对应的元素出现在DOM中，可以将data中的isShow分别设置为true和false试一下效果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>  &lt;div id&#x3D;&quot;app&quot;&gt;<br>    &lt;h1 v-if&#x3D;&quot;isShow&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h1&gt;<br>  &lt;&#x2F;div&gt;<br>  &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>  &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>     const app &#x3D; new Vue(&#123;<br>     el: &#39;#app&#39;,<br>       data: &#123;<br>         message:&#39;你好&#39;,<br>         isShow:true<br>       &#125;<br>    &#125;)<br>  &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="v-if和v-else结合使用"><a href="#v-if和v-else结合使用" class="headerlink" title="v-if和v-else结合使用"></a>v-if和v-else结合使用</h2><p>根据isShow的true和false值的不同显示不同内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>  &lt;div id&#x3D;&quot;app&quot;&gt;<br>    &lt;h1 v-if&#x3D;&quot;isShow&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h1&gt;<br>    &lt;h1 v-else&gt;isShow为false显示&lt;&#x2F;h1&gt;<br>  &lt;&#x2F;div&gt;<br>  &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>  &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>    const app &#x3D; new Vue(&#123;<br>      el: &#39;#app&#39;,<br>      data: &#123;<br>        message:&#39;你好&#39;,<br>        isShow:false<br>      &#125;<br>    &#125;)<br>  &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="v-if和v-else和v-else-if"><a href="#v-if和v-else和v-else-if" class="headerlink" title="v-if和v-else和v-else-if"></a>v-if和v-else和v-else-if</h2><p>第一种方法，适用于简单的判断，不常用</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>  &lt;div id&#x3D;&quot;app&quot;&gt;<br>    &lt;h1 v-if&#x3D;&quot;score&gt;90&quot;&gt;优秀&lt;&#x2F;h1&gt;<br>    &lt;h1 v-else-if&#x3D;&quot;score&gt;80&quot;&gt;良好&lt;&#x2F;h1&gt;<br>    &lt;h1 v-else&gt;及格&lt;&#x2F;h1&gt;<br>  &lt;&#x2F;div&gt;<br>  &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>  &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>    const app &#x3D; new Vue(&#123;<br>      el: &#39;#app&#39;,<br>      data: &#123;<br>        score:90<br>      &#125;<br>    &#125;)<br>  &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
+<p>第二种方法 ，使用computed，适用于复杂判断</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>  &lt;div id&#x3D;&quot;app&quot;&gt;<br>    &lt;h1&gt;&#123;&#123;result&#125;&#125;&lt;&#x2F;h1&gt;<br>  &lt;&#x2F;div&gt;<br>  &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>  &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>    const app &#x3D; new Vue(&#123;<br>      el: &#39;#app&#39;,<br>      data: &#123;<br>        score:90<br>      &#125;,<br>      computed:&#123;<br>       result()&#123;<br>        let showScore&#x3D;&#39;&#39;;<br>        if(this.score&gt;90)&#123;<br>          showScore&#x3D;&quot;优秀&quot;<br>        &#125;<br>        else if(this.score&gt;80)&#123;<br>          showScore&#x3D;&quot;良好&quot;<br>        &#125;<br>        else&#123;<br>          showScore&#x3D;&quot;及格&quot;<br>        &#125;<br>        return showScore<br>        &#125;<br>      &#125;<br>    &#125;)<br>  &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="登录切换小案例"><a href="#登录切换小案例" class="headerlink" title="登录切换小案例"></a>登录切换小案例</h2><p>点击按钮切换输入框的类型，分别是输入账号或输入邮箱<br><img src="/yilia/source/fonts/img/%E5%88%87%E6%8D%A2input%E5%B0%8F%E6%A1%88%E4%BE%8B.mp4" alt="avatar"></p>
+]]></content>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS的块级元素、行内元素和行内块元素</title>
     <url>/2020/07/03/CSS%E7%9A%84%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0/</url>
     <content><![CDATA[<p>元素是文档结构的基础，不同的元素显示方式是不同的，块级元素独自占据一行，行内元素可多个放置在一行。</p>
@@ -16,12 +35,6 @@
       <tags>
         <tag>学习笔记</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>前端知识</title>
-    <url>/2020/06/30/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/</url>
-    <content><![CDATA[<p><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions" target="_blank" rel="noopener">https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions</a></p>
-]]></content>
   </entry>
   <entry>
     <title>hexo博客绑定自己域名</title>
@@ -45,6 +58,12 @@
       <tags>
         <tag>随笔</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>前端知识</title>
+    <url>/2020/06/30/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/</url>
+    <content><![CDATA[<p><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions" target="_blank" rel="noopener">https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions</a></p>
+]]></content>
   </entry>
   <entry>
     <title>事件冒泡</title>
