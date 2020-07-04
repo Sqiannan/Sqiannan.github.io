@@ -18,6 +18,20 @@
       </tags>
   </entry>
   <entry>
+    <title>markdown代码块高亮提示</title>
+    <url>/2020/06/29/disanpian/</url>
+    <content><![CDATA[<p>三种方法</p>
+<a id="more"></a>
+<p>第一种：</p>
+<pre><code>&lt;pro&gt;&lt;code&gt;代码&lt;/code&gt;&lt;/pro&gt;</code></pre><p>第二种：</p>
+<pre><code>```代码类型 （代码）```</code></pre><p>第三种：</p>
+<p>空一行<br>(4个空格)代码</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue的条件判断</title>
     <url>/2020/07/04/Vue%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93/</url>
     <content><![CDATA[<p>Vue中的条件判断有v-if、v-else、v-else-if，下面介绍一下条件判断并做一个小案例。</p>
@@ -37,32 +51,17 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo博客绑定自己域名</title>
-    <url>/2020/06/30/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E8%87%AA%E5%B7%B1%E5%9F%9F%E5%90%8D/</url>
-    <content><![CDATA[<p>1、在自己博客根目录下找到source文件，新建一个CNAME文件，没有任何后缀，写上自己的域名。<br>2、在git bash输入hexo d，重新部署到github。<br>3、在github上打开个人博客，点击Settings，下拉找到GitHub Pages，在Custom Chooser输入自己的域名，点击Save。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>前端知识</title>
     <url>/2020/06/30/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/</url>
     <content><![CDATA[<p><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions" target="_blank" rel="noopener">https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions</a></p>
 ]]></content>
   </entry>
   <entry>
-    <title>markdown代码块高亮提示</title>
-    <url>/2020/06/29/disanpian/</url>
-    <content><![CDATA[<p>三种方法</p>
-<a id="more"></a>
-<p>第一种：</p>
-<pre><code>&lt;pro&gt;&lt;code&gt;代码&lt;/code&gt;&lt;/pro&gt;</code></pre><p>第二种：</p>
-<pre><code>```代码类型 （代码）```</code></pre><p>第三种：</p>
-<p>空一行<br>(4个空格)代码</p>
-]]></content>
+    <title>事件冒泡</title>
+    <url>/2020/07/01/%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/</url>
+    <content><![CDATA[]]></content>
       <tags>
-        <tag>随笔</tag>
+        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -96,11 +95,12 @@
       </tags>
   </entry>
   <entry>
-    <title>事件冒泡</title>
-    <url>/2020/07/01/%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/</url>
-    <content><![CDATA[]]></content>
+    <title>hexo博客绑定自己域名</title>
+    <url>/2020/06/30/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E8%87%AA%E5%B7%B1%E5%9F%9F%E5%90%8D/</url>
+    <content><![CDATA[<p>1、在自己博客根目录下找到source文件，新建一个CNAME文件，没有任何后缀，写上自己的域名。<br>2、在git bash输入hexo d，重新部署到github。<br>3、在github上打开个人博客，点击Settings，下拉找到GitHub Pages，在Custom Chooser输入自己的域名，点击Save。</p>
+]]></content>
       <tags>
-        <tag>学习笔记</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
