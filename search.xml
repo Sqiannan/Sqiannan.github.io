@@ -39,6 +39,15 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo博客绑定自己域名</title>
+    <url>/2020/06/30/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E8%87%AA%E5%B7%B1%E5%9F%9F%E5%90%8D/</url>
+    <content><![CDATA[<p>1、在自己博客根目录下找到source文件，新建一个CNAME文件，没有任何后缀，写上自己的域名。<br>2、在git bash输入hexo d，重新部署到github。<br>3、在github上打开个人博客，点击Settings，下拉找到GitHub Pages，在Custom Chooser输入自己的域名，点击Save。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>markdown代码块高亮提示</title>
     <url>/2020/06/29/disanpian/</url>
     <content><![CDATA[<p>三种方法</p>
@@ -53,12 +62,16 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo博客绑定自己域名</title>
-    <url>/2020/06/30/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E8%87%AA%E5%B7%B1%E5%9F%9F%E5%90%8D/</url>
-    <content><![CDATA[<p>1、在自己博客根目录下找到source文件，新建一个CNAME文件，没有任何后缀，写上自己的域名。<br>2、在git bash输入hexo d，重新部署到github。<br>3、在github上打开个人博客，点击Settings，下拉找到GitHub Pages，在Custom Chooser输入自己的域名，点击Save。</p>
-]]></content>
+    <title>v-show和v-if的区别</title>
+    <url>/2020/07/05/v-show%E5%92%8Cv-if%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<p>v-if和v-show用法非常相似，也决定一个元素是否被渲染</p>
+<a id="more"></a>
+<p>对比：<br>    v-if:当条件为false时，包含v-if指令的元素，根本不会存在于DOM中<br>    v-show:当条件为false时，v-show只是给我们的元素添加一个行内样式：display:none，元素还是存在DOM里面<br>如何选择：<br>    当需要在显示和隐藏之间切换频繁使用v-show，当只有一次切换使用v-if</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>    &lt;div id&#x3D;&quot;app&quot;&gt;<br>        &lt;h1 v-if&#x3D;&quot;isShow&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h1&gt;<br>        &lt;h1 v-show&#x3D;&quot;isShow&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h1&gt;<br>      &lt;&#x2F;div&gt;<br>        &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>          const app &#x3D; new Vue(&#123;<br>            el: &#39;#app&#39;,<br>            data: &#123;<br>            message:&#39;你好&#39;,<br>              isShow:false<br>            &#125;<br>        &#125;)<br>        &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
+<p>下面是F12元素效果<br><img src="https://github.com/Sqiannan/Sqiannan.github.io/blob/master/头像.jpg" width="50%"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain"><br><br></code></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>随笔</tag>
+        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -67,30 +80,6 @@
     <content><![CDATA[]]></content>
       <tags>
         <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo yilia 博客增加菜单分类</title>
-    <url>/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>基于hexo+yilia主题搭建的博客，如果要添加菜单分类，需要在根目录下执行new page “分类名字”，然后在根目录下的_config.yml文件中的menu下添加类名。</p>
-<a id="more"></a>
-<p>具体步骤：</p>
-<ol>
-<li>创建分类名字<br>在根目录下执行<code>git bash</code>，输入<code>hexo new page</code> “学习笔记”</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">sqiannan@DESKTOP-TPIHHKM MINGW64 &#x2F;d&#x2F;blog<br>$ hexo page &quot;学习笔记&quot;<br></code></pre></td></tr></table></figure>
-<ol start="2">
-<li>修改_config.yml<br>打开themes_config.yml，在menu下添加学习笔记: \tags\学习笔记</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain"># Header<br>menu:<br>  主页: &#x2F;<br>  随笔: &#x2F;tags&#x2F;随笔&#x2F;<br>  学习笔记: &#x2F;tags&#x2F;学习笔记&#x2F;<br></code></pre></td></tr></table></figure>
-<ol start="3">
-<li>添加文章的tags<br>打开自己的文章，在头部的tags: 后添加类名</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">---<br>title: hexo yilia 博客增加菜单分类<br>date: 2020-06-28 15:24:30<br>description: hexo yilia 博客增加菜单分类<br>tags:<br>       - 学习笔记<br>---<br></code></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -127,6 +116,30 @@
 ]]></content>
       <tags>
         <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo yilia 博客增加菜单分类</title>
+    <url>/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>基于hexo+yilia主题搭建的博客，如果要添加菜单分类，需要在根目录下执行new page “分类名字”，然后在根目录下的_config.yml文件中的menu下添加类名。</p>
+<a id="more"></a>
+<p>具体步骤：</p>
+<ol>
+<li>创建分类名字<br>在根目录下执行<code>git bash</code>，输入<code>hexo new page</code> “学习笔记”</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">sqiannan@DESKTOP-TPIHHKM MINGW64 &#x2F;d&#x2F;blog<br>$ hexo page &quot;学习笔记&quot;<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>修改_config.yml<br>打开themes_config.yml，在menu下添加学习笔记: \tags\学习笔记</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain"># Header<br>menu:<br>  主页: &#x2F;<br>  随笔: &#x2F;tags&#x2F;随笔&#x2F;<br>  学习笔记: &#x2F;tags&#x2F;学习笔记&#x2F;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>添加文章的tags<br>打开自己的文章，在头部的tags: 后添加类名</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">---<br>title: hexo yilia 博客增加菜单分类<br>date: 2020-06-28 15:24:30<br>description: hexo yilia 博客增加菜单分类<br>tags:<br>       - 学习笔记<br>---<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
 </search>

@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Vue的条件判断 | 博客</title>
+  <title>v-show和v-if的区别 | 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Vue中的条件判断有v-if、v-else、v-else-if，下面介绍一下条件判断并做一个小案例。">
+  <meta name="description" content="v-if和v-show用法非常相似，也决定一个元素是否被渲染">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue的条件判断">
-<meta property="og:url" content="http://yoursite.com/2020/07/04/Vue%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93/index.html">
+<meta property="og:title" content="v-show和v-if的区别">
+<meta property="og:url" content="http://yoursite.com/2020/07/05/v-show%E5%92%8Cv-if%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="Vue中的条件判断有v-if、v-else、v-else-if，下面介绍一下条件判断并做一个小案例。">
-<meta property="article:published_time" content="2020-07-04T14:58:23.000Z">
-<meta property="article:modified_time" content="2020-07-04T16:15:23.085Z">
+<meta property="og:description" content="v-if和v-show用法非常相似，也决定一个元素是否被渲染">
+<meta property="og:image" content="https://github.com/Sqiannan/Sqiannan.github.io/blob/master/%E5%A4%B4%E5%83%8F.jpg">
+<meta property="article:published_time" content="2020-07-05T07:47:19.000Z">
+<meta property="article:modified_time" content="2020-07-05T08:17:05.152Z">
 <meta property="article:author" content="邵倩楠">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Sqiannan/Sqiannan.github.io/blob/master/%E5%A4%B4%E5%83%8F.jpg">
   
     <link rel="alternative" href="/atom.xml" title="博客" type="application/atom+xml">
   
@@ -148,40 +150,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Vue的条件渲染" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-v-show和v-if的区别" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Vue的条件判断
+      v-show和v-if的区别
     </h1>
   
 
         
-        <a href="/2020/07/04/Vue%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93/" class="archive-article-date">
-  	<time datetime="2020-07-04T14:58:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
+        <a href="/2020/07/05/v-show%E5%92%8Cv-if%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
+  	<time datetime="2020-07-05T07:47:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Vue中的条件判断有v-if、v-else、v-else-if，下面介绍一下条件判断并做一个小案例。</p>
+        <p>v-if和v-show用法非常相似，也决定一个元素是否被渲染</p>
 <a id="more"></a>
-<h2 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h2><p>v-if判断一个元素是否渲染，当条件为true时渲染，为false时不会有对应的元素出现在DOM中，可以将data中的isShow分别设置为true和false试一下效果。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>  &lt;div id&#x3D;&quot;app&quot;&gt;<br>    &lt;h1 v-if&#x3D;&quot;isShow&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h1&gt;<br>  &lt;&#x2F;div&gt;<br>  &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>  &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>     const app &#x3D; new Vue(&#123;<br>     el: &#39;#app&#39;,<br>       data: &#123;<br>         message:&#39;你好&#39;,<br>         isShow:true<br>       &#125;<br>    &#125;)<br>  &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
-<h2 id="v-if和v-else结合使用"><a href="#v-if和v-else结合使用" class="headerlink" title="v-if和v-else结合使用"></a>v-if和v-else结合使用</h2><p>根据isShow的true和false值的不同显示不同内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>  &lt;div id&#x3D;&quot;app&quot;&gt;<br>    &lt;h1 v-if&#x3D;&quot;isShow&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h1&gt;<br>    &lt;h1 v-else&gt;isShow为false显示&lt;&#x2F;h1&gt;<br>  &lt;&#x2F;div&gt;<br>  &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>  &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>    const app &#x3D; new Vue(&#123;<br>      el: &#39;#app&#39;,<br>      data: &#123;<br>        message:&#39;你好&#39;,<br>        isShow:false<br>      &#125;<br>    &#125;)<br>  &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
-<h2 id="v-if和v-else和v-else-if"><a href="#v-if和v-else和v-else-if" class="headerlink" title="v-if和v-else和v-else-if"></a>v-if和v-else和v-else-if</h2><p>第一种方法，适用于简单的判断，不常用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>  &lt;div id&#x3D;&quot;app&quot;&gt;<br>    &lt;h1 v-if&#x3D;&quot;score&gt;90&quot;&gt;优秀&lt;&#x2F;h1&gt;<br>    &lt;h1 v-else-if&#x3D;&quot;score&gt;80&quot;&gt;良好&lt;&#x2F;h1&gt;<br>    &lt;h1 v-else&gt;及格&lt;&#x2F;h1&gt;<br>  &lt;&#x2F;div&gt;<br>  &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>  &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>    const app &#x3D; new Vue(&#123;<br>      el: &#39;#app&#39;,<br>      data: &#123;<br>        score:90<br>      &#125;<br>    &#125;)<br>  &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
-<p>第二种方法 ，使用computed，适用于复杂判断</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>  &lt;div id&#x3D;&quot;app&quot;&gt;<br>    &lt;h1&gt;&#123;&#123;result&#125;&#125;&lt;&#x2F;h1&gt;<br>  &lt;&#x2F;div&gt;<br>  &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>  &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>    const app &#x3D; new Vue(&#123;<br>      el: &#39;#app&#39;,<br>      data: &#123;<br>        score:90<br>      &#125;,<br>      computed:&#123;<br>       result()&#123;<br>        let showScore&#x3D;&#39;&#39;;<br>        if(this.score&gt;90)&#123;<br>          showScore&#x3D;&quot;优秀&quot;<br>        &#125;<br>        else if(this.score&gt;80)&#123;<br>          showScore&#x3D;&quot;良好&quot;<br>        &#125;<br>        else&#123;<br>          showScore&#x3D;&quot;及格&quot;<br>        &#125;<br>        return showScore<br>        &#125;<br>      &#125;<br>    &#125;)<br>  &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
-<h2 id="登录切换小案例"><a href="#登录切换小案例" class="headerlink" title="登录切换小案例"></a>登录切换小案例</h2><p>点击按钮切换输入框的类型，分别是输入账号或输入邮箱</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>    &lt;div id&#x3D;&quot;app&quot;&gt;<br>        &lt;span v-if&#x3D;&quot;isShow&quot;&gt;<br>            &lt;lable for&#x3D;&quot;username&quot;&gt;用户账号&lt;&#x2F;lable&gt;<br>            &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;请输入账号&quot;&gt;&lt;&#x2F;span&gt;<br>        &lt;span v-else&gt;<br>            &lt;lable for&#x3D;&quot;email&quot;&gt;用户邮箱&lt;&#x2F;lable&gt;<br>            &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;请输入邮箱&quot;&gt;&lt;&#x2F;span&gt;<br>       <br>       &lt;button @click&#x3D;&quot;isShow&#x3D;!isShow&quot;&gt;切换登录方式&lt;&#x2F;button&gt;<br>      &lt;&#x2F;div&gt;<br>      &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>      &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>        const app &#x3D; new Vue(&#123;<br>          el: &#39;#app&#39;,<br>          data: &#123;<br>          isShow:true<br>          &#125;<br>      &#125;)<br>      &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
-<p>如果输入框有内容，切换了类型，会发现文字依然显示之前输入的内容，但是我们确实切换到了另外一个输入框，在另一个input元素中我们并没有输入内容，但是却显示之前输入框内容。<br>原因：<br>其中用到了虚拟DOM，因为Vue在进行DOM渲染时，出于性能的考虑，会尽可能复用已经存在的元素，而不是创建新的元素。<br>解决方案：<br>    如果不希望input出现重复利用的情况，可以给对应的input添加key，并且保证key不同，作为标识，key不同Vue就不会复用，而是新创建一个元素input。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>    &lt;div id&#x3D;&quot;app&quot;&gt;<br>        &lt;span v-if&#x3D;&quot;isShow&quot;&gt;<br>            &lt;lable for&#x3D;&quot;username&quot;&gt;用户账号&lt;&#x2F;lable&gt;<br>            &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;请输入账号&quot; key&#x3D;&quot;username&quot;&gt;&lt;&#x2F;span&gt;<br>        &lt;span v-else&gt;<br>            &lt;lable for&#x3D;&quot;email&quot;&gt;用户邮箱&lt;&#x2F;lable&gt;<br>            &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;请输入邮箱&quot; key&#x3D;&quot;email&quot;&gt;&lt;&#x2F;span&gt;<br>       <br>       &lt;button @click&#x3D;&quot;isShow&#x3D;!isShow&quot;&gt;切换登录方式&lt;&#x2F;button&gt;<br>      &lt;&#x2F;div&gt;<br>      &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>      &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>        const app &#x3D; new Vue(&#123;<br>          el: &#39;#app&#39;,<br>          data: &#123;<br>          isShow:true<br>          &#125;<br>      &#125;)<br>      &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
+<p>对比：<br>    v-if:当条件为false时，包含v-if指令的元素，根本不会存在于DOM中<br>    v-show:当条件为false时，v-show只是给我们的元素添加一个行内样式：display:none，元素还是存在DOM里面<br>如何选择：<br>    当需要在显示和隐藏之间切换频繁使用v-show，当只有一次切换使用v-if</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>    &lt;div id&#x3D;&quot;app&quot;&gt;<br>        &lt;h1 v-if&#x3D;&quot;isShow&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h1&gt;<br>        &lt;h1 v-show&#x3D;&quot;isShow&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h1&gt;<br>      &lt;&#x2F;div&gt;<br>        &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>          const app &#x3D; new Vue(&#123;<br>            el: &#39;#app&#39;,<br>            data: &#123;<br>            message:&#39;你好&#39;,<br>              isShow:false<br>            &#125;<br>        &#125;)<br>        &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
+<p>下面是F12元素效果<br><img src="https://github.com/Sqiannan/Sqiannan.github.io/blob/master/头像.jpg" width="50%"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain"><br><br></code></pre></td></tr></table></figure>
       
 
 <!-- 添加版权声明 -->
@@ -283,7 +277,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/04/Vue%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/05/v-show%E5%92%8Cv-if%E7%9A%84%E5%8C%BA%E5%88%AB/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -297,18 +291,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/05/v-show%E5%92%8Cv-if%E7%9A%84%E5%8C%BA%E5%88%AB/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          v-show和v-if的区别
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/03/CSS%E7%9A%84%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CSS的块级元素、行内元素和行内块元素</div>
+    <a href="/2020/07/04/Vue%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue的条件判断</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -347,7 +332,7 @@
 <script src="https://www.wenjunjiang.win/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2020/07/04/Vue%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93/",
+  id: "http://yoursite.com/2020/07/05/v-show%E5%92%8Cv-if%E7%9A%84%E5%8C%BA%E5%88%AB/",
   owner: 'Sqiannan',
   repo: 'sqiannan.github.io',
   oauth: {
