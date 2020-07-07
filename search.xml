@@ -18,6 +18,22 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo博客绑定自己域名</title>
+    <url>/2020/06/30/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E8%87%AA%E5%B7%B1%E5%9F%9F%E5%90%8D/</url>
+    <content><![CDATA[<p>1、在自己博客根目录下找到source文件，新建一个CNAME文件，没有任何后缀，写上自己的域名。<br>2、在git bash输入hexo d，重新部署到github。<br>3、在github上打开个人博客，点击Settings，下拉找到GitHub Pages，在Custom Chooser输入自己的域名，点击Save。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue小案例</title>
+    <url>/2020/07/07/Vue%E5%B0%8F%E6%A1%88%E4%BE%8B/</url>
+    <content><![CDATA[<p>使用Vue做一个小案例，点击哪个哪个变红。</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>    &lt;div id&#x3D;&quot;app&quot;&gt;<br>        &lt;!-- 遍历过程中不使用索引值 --&gt;<br>      &lt;ul&gt;<br>        &lt;li v-for&#x3D;&quot;(item,index) in names&quot; :class&#x3D;&quot;&#123;active:currentIndex&#x3D;&#x3D;&#x3D;index&#125;&quot; @click&#x3D;&quot;isClick(index)&quot;&gt;&#123;&#123;item&#125;&#125;&lt;&#x2F;li&gt;<br>      &lt;&#x2F;ul&gt;<br>    &lt;&#x2F;div&gt;<br>        &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>          const app &#x3D; new Vue(&#123;<br>            el: &#39;#app&#39;,<br>            data: &#123;<br>                names:[&#39;jack&#39;,&#39;join&#39;,&#39;carry&#39;,&#39;wkjr&#39;],<br>                currentIndex:0<br>            &#125;,<br>           methods:&#123;<br>               isClick(index)&#123;<br>                   this.currentIndex&#x3D;index  &#x2F;&#x2F;根据点击将index值赋给currentIndex<br>               &#125;<br><br>           &#125;<br>        &#125;)<br>        &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>Vue的条件判断</title>
     <url>/2020/07/04/Vue%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93/</url>
     <content><![CDATA[<p>Vue中的条件判断有v-if、v-else、v-else-if，下面介绍一下条件判断并做一个小案例。</p>
@@ -36,15 +52,6 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>    &lt;div id&#x3D;&quot;app&quot;&gt;<br>        &lt;span v-if&#x3D;&quot;isShow&quot;&gt;<br>            &lt;lable for&#x3D;&quot;username&quot;&gt;用户账号&lt;&#x2F;lable&gt;<br>            &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;请输入账号&quot; key&#x3D;&quot;username&quot;&gt;&lt;&#x2F;span&gt;<br>        &lt;span v-else&gt;<br>            &lt;lable for&#x3D;&quot;email&quot;&gt;用户邮箱&lt;&#x2F;lable&gt;<br>            &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;请输入邮箱&quot; key&#x3D;&quot;email&quot;&gt;&lt;&#x2F;span&gt;<br>       <br>       &lt;button @click&#x3D;&quot;isShow&#x3D;!isShow&quot;&gt;切换登录方式&lt;&#x2F;button&gt;<br>      &lt;&#x2F;div&gt;<br>      &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>      &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>        const app &#x3D; new Vue(&#123;<br>          el: &#39;#app&#39;,<br>          data: &#123;<br>          isShow:true<br>          &#125;<br>      &#125;)<br>      &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客绑定自己域名</title>
-    <url>/2020/06/30/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E8%87%AA%E5%B7%B1%E5%9F%9F%E5%90%8D/</url>
-    <content><![CDATA[<p>1、在自己博客根目录下找到source文件，新建一个CNAME文件，没有任何后缀，写上自己的域名。<br>2、在git bash输入hexo d，重新部署到github。<br>3、在github上打开个人博客，点击Settings，下拉找到GitHub Pages，在Custom Chooser输入自己的域名，点击Save。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -69,7 +76,7 @@
 <p>对比：<br>    v-if:当条件为false时，包含v-if指令的元素，根本不会存在于DOM中<br>    v-show:当条件为false时，v-show只是给我们的元素添加一个行内样式：display:none，元素还是存在DOM里面<br>如何选择：<br>    当需要在显示和隐藏之间切换频繁使用v-show，当只有一次切换使用v-if</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>    &lt;div id&#x3D;&quot;app&quot;&gt;<br>        &lt;h1 v-if&#x3D;&quot;isShow&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h1&gt;<br>        &lt;h1 v-show&#x3D;&quot;isShow&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h1&gt;<br>      &lt;&#x2F;div&gt;<br>        &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>          const app &#x3D; new Vue(&#123;<br>            el: &#39;#app&#39;,<br>            data: &#123;<br>            message:&#39;你好&#39;,<br>              isShow:false<br>            &#125;<br>        &#125;)<br>        &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
 <p>下面是F12元素效果<br><img src="https://github.com/Sqiannan/Sqiannan.github.io/blob/master/头像.jpg" width="50%"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain"><br><br></code></pre></td></tr></table></figure>]]></content>
+]]></content>
       <tags>
         <tag>学习笔记</tag>
       </tags>
@@ -81,12 +88,6 @@
       <tags>
         <tag>学习笔记</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>前端知识</title>
-    <url>/2020/06/30/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/</url>
-    <content><![CDATA[<p><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions" target="_blank" rel="noopener">https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions</a></p>
-]]></content>
   </entry>
   <entry>
     <title>CSS的布局方法</title>
@@ -117,6 +118,12 @@
       <tags>
         <tag>学习笔记</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>前端知识</title>
+    <url>/2020/06/30/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/</url>
+    <content><![CDATA[<p><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions" target="_blank" rel="noopener">https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions</a></p>
+]]></content>
   </entry>
   <entry>
     <title>hexo yilia 博客增加菜单分类</title>
