@@ -6,13 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | 博客</title>
+  <title>浮动及带来的影响 | 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="博客">
-<meta property="og:url" content="http://yoursite.com/archives/2020/page/2/index.html">
+  <meta name="description" content="浮动元素脱离文档流，在当前行的左边或右边对其，若当前行没有足够的距离，会下移一行，直到有足够的空间。浮动元素到包含它的边框或另一个浮动框的边缘停留。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浮动及带来的影响">
+<meta property="og:url" content="http://yoursite.com/2020/07/12/%E6%B5%AE%E5%8A%A8%E5%8F%8A%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%BD%B1%E5%93%8D/index.html">
 <meta property="og:site_name" content="博客">
+<meta property="og:description" content="浮动元素脱离文档流，在当前行的左边或右边对其，若当前行没有足够的距离，会下移一行，直到有足够的空间。浮动元素到包含它的边框或另一个浮动框的边缘停留。">
+<meta property="article:published_time" content="2020-07-12T09:05:33.000Z">
+<meta property="article:modified_time" content="2020-07-12T09:44:26.452Z">
 <meta property="article:author" content="邵倩楠">
+<meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="博客" type="application/atom+xml">
@@ -143,139 +148,87 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="new-浮动及带来的影响" class="article article-type-new " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      浮动及带来的影响
+    </h1>
+  
+
+        
+        <a href="/2020/07/12/%E6%B5%AE%E5%8A%A8%E5%8F%8A%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%BD%B1%E5%93%8D/" class="archive-article-date">
+  	<time datetime="2020-07-12T09:05:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-12</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>浮动元素脱离文档流，在当前行的左边或右边对其，若当前行没有足够的距离，会下移一行，直到有足够的空间。浮动元素到包含它的边框或另一个浮动框的边缘停留。</p>
+<a id="more"></a>
+<h2 id="浮动元素的特性"><a href="#浮动元素的特性" class="headerlink" title="浮动元素的特性"></a>浮动元素的特性</h2><p>1、浮动元素会脱离标准流(脱标：浮动的盒子不再保留原先的位置)<br>2、浮动的元素会一行内显示并且元素顶部对齐<br>注意：<br>浮动的元素是互相贴靠在一起的（不会有缝隙），如果父级宽度装不下这些浮动的盒子，多出的盒子会另起一行对齐。<br>3、浮动的元素会具有行内块元素的特性<br>浮动元素的大小根据内容来决定<br>浮动的盒子中间是没有缝隙的 </p>
+<h2 id="浮动布局注意点"><a href="#浮动布局注意点" class="headerlink" title="浮动布局注意点"></a>浮动布局注意点</h2><p>1、浮动和标准流的父盒子搭配。<br>先用标准流的父元素排列上下位置, 之后内部子元素采取浮动排列左右位置<br>2、一个元素浮动了，理论上其余的兄弟元素也要浮动。<br>一个盒子里面有多个子盒子，如果其中一个盒子浮动了，其他兄弟也应该浮动，以防止引起问题。<br>浮动的盒子只会影响浮动盒子后面的标准流,不会影响前面的标准流。</p>
+<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><p>1、为什么需要清除浮动？<br>由于父级盒子很多情况下，不方便给高度，但是子盒子浮动又不占有位置，最后父级盒子高度为 0 时，就会影响下面的标准流盒子。<br>2、清除浮动本质<br>清除浮动的本质是清除浮动元素造成的影响：浮动的子标签无法撑开父盒子的高度<br>注意：</p>
+<ul>
+<li>如果父盒子本身有高度，则不需要清除浮动</li>
+<li>清除浮动之后，父级就会根据浮动的子盒子自动检测高度。</li>
+<li>父级有了高度，就不会影响下面的标准流了<h2 id="清除浮动方法"><a href="#清除浮动方法" class="headerlink" title="清除浮动方法"></a>清除浮动方法</h2>1、额外标签法<br>额外标签法也称为隔墙法，是 W3C 推荐的做法。<br>使用方式：<br>额外标签法会在浮动元素末尾添加一个空的标签。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"clear:both"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>，或者其他标签（如<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>等）。<br></code></pre></td></tr></table></figure>
+优点： 通俗易懂，书写方便<br>缺点： 添加许多无意义的标签，结构化较差<br>注意： 要求这个新的空标签必须是块级元素。<br>2、父级添加 overflow 属性<br>可以给父级添加 overflow 属性，将其属性值设置为 hidden、 auto 或 scroll 。<br>例如：<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">overflow:hidden | auto | scroll;<br></code></pre></td></tr></table></figure>
+优点：代码简洁<br>缺点：无法显示溢出的部分<br>注意：是给父元素添加代码<br>3、父级添加after伪元素<br>:after 方式是额外标签法的升级版。给父元素添加：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.clearfix</span><span class="hljs-selector-pseudo">:after</span> &#123;  <br>  <span class="hljs-attribute">content</span>: <span class="hljs-string">""</span>; <br>  <span class="hljs-attribute">display</span>: block; <br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>; <br>  <span class="hljs-attribute">clear</span>: both; <br>  <span class="hljs-attribute">visibility</span>: hidden;  <br>&#125; <br><span class="hljs-selector-class">.clearfix</span> &#123;  <span class="hljs-comment">/* IE6、7 专有 */</span> <br>  *zoom: 1;<br>&#125;<br></code></pre></td></tr></table></figure>
+优点：没有增加标签，结构更简单<br>缺点：照顾低版本浏览器<br>代表网站： 百度、淘宝网、网易等<br>4、父级添加双伪元素<br>给父元素添加<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.clearfix</span><span class="hljs-selector-pseudo">:before</span>,<span class="hljs-selector-class">.clearfix</span><span class="hljs-selector-pseudo">:after</span> &#123;<br>  <span class="hljs-attribute">content</span>:<span class="hljs-string">""</span>;<br>  <span class="hljs-attribute">display</span>:table; <br>&#125;<br><span class="hljs-selector-class">.clearfix</span><span class="hljs-selector-pseudo">:after</span> &#123;<br>  <span class="hljs-attribute">clear</span>:both;<br>&#125;<br><span class="hljs-selector-class">.clearfix</span> &#123;<br>   *zoom:1;<br>&#125;<br></code></pre></td></tr></table></figure>
+优点：代码更简洁<br>缺点：照顾低版本浏览器<br>代表网站：小米、腾讯等<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2></li>
+</ul>
+<p>为什么需要清除浮动？</p>
+<ol>
+<li>父级没高度。</li>
+<li>子盒子浮动了。</li>
+<li>影响下面布局了，我们就应该清除浮动了。</li>
+</ol>
+
+      
+
+<!-- 添加版权声明 -->
+    
+
+  <div class="declare" hidden="hidden"></div>
+
+      <!-- 添加版权声明 -->
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/支付宝.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/30/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" class="archive-article-date">
-  	<time datetime="2020-06-30T04:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/30/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/">前端知识</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/29/disanpian/" class="archive-article-date">
-  	<time datetime="2020-06-29T13:39:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/29/disanpian/">markdown代码块高亮提示</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-06-28T07:24:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/">hexo yilia 博客增加菜单分类</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-06-25T11:32:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">CSS的布局方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -287,22 +240,121 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/12/%E6%B5%AE%E5%8A%A8%E5%8F%8A%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%BD%B1%E5%93%8D/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/07/11/CSS%E7%9A%84%E7%89%B9%E6%80%A7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS的特性</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2020/07/12/%E6%B5%AE%E5%8A%A8%E5%8F%8A%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%BD%B1%E5%93%8D/",
+  owner: 'Sqiannan',
+  repo: 'sqiannan.github.io',
+  oauth: {
+    client_id: '2a605abc803a7f396143',
+    client_secret: '1426cc49a294da18ebbfa5c6ed6336d1749b7423',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -328,8 +380,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
