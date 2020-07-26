@@ -18,6 +18,16 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue响应式数组方法</title>
+    <url>/2020/07/09/Vue%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>Vue响应式数组方法有push、pop、shift、unshift 、splice、sort、reverse，通过索引值修改元素，不是响应式。</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&lt;!DOCTYPE html&gt;<br>&lt;html lang&#x3D;&quot;en&quot;&gt;<br>&lt;head&gt;<br>    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;<br>    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;<br>    &lt;title&gt;Document&lt;&#x2F;title&gt;<br>    <br>&lt;&#x2F;head&gt;<br>&lt;body&gt;<br>    &lt;div id&#x3D;&quot;app&quot;&gt;<br>        &lt;ul&gt;<br>            &lt;li v-for&#x3D;&quot;item in letter&quot;&gt;&#123;&#123;item&#125;&#125;&lt;&#x2F;li&gt;<br>        &lt;&#x2F;ul&gt;<br>        &lt;button @click&#x3D;&quot;btnClick&quot;&gt;按钮&lt;&#x2F;button&gt;<br>    &lt;&#x2F;div&gt;<br>      &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>      &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>        const app &#x3D; new Vue(&#123;<br>          el: &#39;#app&#39;,<br>          data: &#123;<br>            letter:[&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;]<br>          &#125;,<br>          methods:&#123;<br>              btnClick()&#123;<br>                &#x2F;&#x2F; 1.push方法  可以添加多个元素<br>                &#x2F;&#x2F; this.letter.push(&#39;F&#39;)<br>                &#x2F;&#x2F; 2.pop方法  删除最后一个元素<br>                &#x2F;&#x2F; this.letters.pop()<br>                &#x2F;&#x2F; 3.shift   删除第一个元素<br>                &#x2F;&#x2F; this.letters.shift()<br>                &#x2F;&#x2F; 4.unshift  最前面添加元素,可以添加多个元素<br>                &#x2F;&#x2F; this.letters.unshift(&#39;a&#39;,&#39;b&#39;,&#39;c&#39;)<br>                &#x2F;&#x2F; 5.splice  可以删除，插入，替换元素 <br>                &#x2F;&#x2F; 5.1删除元素：<br>                &#x2F;&#x2F;    3个参数<br>                &#x2F;&#x2F;    第一位:从什么开始<br>                &#x2F;&#x2F;    第二位:删除几个,若没有写,则删除后面所有元素<br>                &#x2F;&#x2F; this.letter.splice(1,3)  从第一个开始，删除3位元素<br>                &#x2F;&#x2F; this.letter.splice(1)    从第一位开始，删除后面所有元素<br>                &#x2F;&#x2F; this.letter.splice(1,3,&#39;a&#39;,&#39;b&#39;) 从第一位开始,删除3个元素,添加两个元素a,b<br>                &#x2F;&#x2F; 5.2替换元素:<br>                &#x2F;&#x2F;    第二个参数,表示要替换几个元素,后面用于替换前面元素<br>                &#x2F;&#x2F; this.letter.splice(1,0,&#39;a&#39;,&#39;b&#39;)<br>                &#x2F;&#x2F; 5.3插入元素:<br>                &#x2F;&#x2F;    传入0,并且后面跟上要插入的元素<br>                &#x2F;&#x2F; this.letter.splice(1,0,&#39;a&#39;,&#39;b&#39;)<br>                &#x2F;&#x2F; 6.sort   排序<br>                &#x2F;&#x2F; this.letters.sort()<br>                &#x2F;&#x2F; 7.reverse  反转 <br>                &#x2F;&#x2F; this.letters.reverse()<br>                &#x2F;&#x2F; 通过索引值修改数组中的元素，不是响应式，可以改为this.letter.splice(0,1,&#39;bbb&#39;)<br>                &#x2F;&#x2F; this.letter[0]&#x3D;&#39;bbb&#39;<br>              &#125;<br>          &#125;<br>      &#125;)<br>      &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br>&lt;&#x2F;html&gt;<br></code></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS的特性</title>
     <url>/2020/07/11/CSS%E7%9A%84%E7%89%B9%E6%80%A7/</url>
     <content><![CDATA[<p>CSS的三大特性：层叠性、继承性、优先级。</p>
@@ -32,15 +42,6 @@
       <tags>
         <tag>学习笔记</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Vue小案例</title>
-    <url>/2020/07/07/Vue%E5%B0%8F%E6%A1%88%E4%BE%8B/</url>
-    <content><![CDATA[<p>使用Vue做一个小案例，点击哪个哪个变红。</p>
-<a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>    &lt;div id&#x3D;&quot;app&quot;&gt;<br>      &lt;ul&gt;<br>        &lt;li v-for&#x3D;&quot;(item,index) in names&quot; :class&#x3D;&quot;&#123;active:currentIndex&#x3D;&#x3D;&#x3D;index&#125;&quot; @click&#x3D;&quot;isClick(index)&quot;&gt;&#123;&#123;item&#125;&#125;&lt;&#x2F;li&gt;<br>      &lt;&#x2F;ul&gt;<br>    &lt;&#x2F;div&gt;<br>        &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>          const app &#x3D; new Vue(&#123;<br>            el: &#39;#app&#39;,<br>            data: &#123;<br>                names:[&#39;jack&#39;,&#39;join&#39;,&#39;carry&#39;,&#39;wkjr&#39;],<br>                currentIndex:0<br>            &#125;,<br>           methods:&#123;<br>               isClick(index)&#123;<br>                   this.currentIndex&#x3D;index  &#x2F;&#x2F;根据点击将index值赋给currentIndex<br>               &#125;<br><br>           &#125;<br>        &#125;)<br>        &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
-<p>上述代码会使第一个一直为红色，可以将currentIndex的初始值改为负数。</p>
-]]></content>
   </entry>
   <entry>
     <title>HTML5和CSS3的新特性</title>
@@ -72,46 +73,233 @@
 <li>浏览器支持情况不同</li>
 <li>谷歌浏览器把音频和视频自动播放禁止了</li>
 <li>我们可以给视频标签添加 muted 属性来静音播放视频，音频不可以（可以通过JavaScript解决）</li>
-<li>视频标签是重点，我们经常设置自动播放，不使用 controls 控件，循环和设置大小属性  <h3 id="1-3-HTML5-新增的-input-类型"><a href="#1-3-HTML5-新增的-input-类型" class="headerlink" title="1.3 HTML5 新增的 input 类型"></a>1.3 HTML5 新增的 input 类型</h3>标题 | 标题 </li>
-<li>| -<br>文本 | 文本 |<br>文本 | 文本 |</li>
+<li>视频标签是重点，我们经常设置自动播放，不使用 controls 控件，循环和设置大小属性</li>
 </ul>
+<h3 id="1-3-HTML5-新增的-input-类型"><a href="#1-3-HTML5-新增的-input-类型" class="headerlink" title="1.3 HTML5 新增的 input 类型"></a>1.3 HTML5 新增的 input 类型</h3><table>
+<thead>
+<tr>
+<th align="center">属性值</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">type=”email”</td>
+<td align="center">限制用户输入必须为Email类型</td>
+</tr>
+<tr>
+<td align="center">type=”url”</td>
+<td align="center">限制用户输入必须为URL类型</td>
+</tr>
+<tr>
+<td align="center">type=”date”</td>
+<td align="center">限制用户输入必须为日期类型</td>
+</tr>
+<tr>
+<td align="center">type=”time”</td>
+<td align="center">限制用户输入必须为时间类型</td>
+</tr>
+<tr>
+<td align="center">type=”month”</td>
+<td align="center">限制用户输入必须为月类型</td>
+</tr>
+<tr>
+<td align="center">type=”wek”</td>
+<td align="center">限制用户输入必须为周类型</td>
+</tr>
+<tr>
+<td align="center">type=” number”</td>
+<td align="center">限制用户输入必须为数字类型</td>
+</tr>
+<tr>
+<td align="center">type=”tel”</td>
+<td align="center">手机号码</td>
+</tr>
+<tr>
+<td align="center">type=”email”</td>
+<td align="center">限制用户输入必须为Email类型</td>
+</tr>
+<tr>
+<td align="center">type-“color”</td>
+<td align="center">生成一个颜色选择表单</td>
+</tr>
+</tbody></table>
+<h3 id="1-4-HTML5-新增的表单属性"><a href="#1-4-HTML5-新增的表单属性" class="headerlink" title="1.4 HTML5 新增的表单属性"></a>1.4 HTML5 新增的表单属性</h3><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">值</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">required</td>
+<td align="center">required</td>
+<td align="center">表单拥有该属性表示其内容不能为空，必填</td>
+</tr>
+<tr>
+<td align="center">placeholder</td>
+<td align="center">提示文本</td>
+<td align="center">表单的提示信息，存在默认值将不显示</td>
+</tr>
+<tr>
+<td align="center">autofocus</td>
+<td align="center">autofocus</td>
+<td align="center">自动聚焦属性，页面加载完成自动聚焦到指定表单</td>
+</tr>
+<tr>
+<td align="center">autocomplete</td>
+<td align="center">off/ on</td>
+<td align="center">当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。默认已经打开，如autocomplete=”on”,关闭autocomplete =”off”需要放在表单内，同时加上name属性，同时成功提交</td>
+</tr>
+<tr>
+<td align="center">multiple</td>
+<td align="center">multiple</td>
+<td align="center">可以多选文件提交</td>
+</tr>
+</tbody></table>
+<h2 id="2-CSS3-的新特性"><a href="#2-CSS3-的新特性" class="headerlink" title="2. CSS3 的新特性"></a>2. CSS3 的新特性</h2><h3 id="2-1-CSS3-的现状"><a href="#2-1-CSS3-的现状" class="headerlink" title="2.1 CSS3 的现状"></a>2.1 CSS3 的现状</h3><ul>
+<li>新增的CSS3特性有兼容性问题，ie9+才支持 </li>
+<li>移动端支持优于 PC 端</li>
+<li>不断改进中 </li>
+<li>应用相对广泛</li>
+<li>此处主要介绍：新增选择器和盒子模型以及其他特性</li>
+</ul>
+<h3 id="2-2-属性选择器"><a href="#2-2-属性选择器" class="headerlink" title="2.2 属性选择器"></a>2.2 属性选择器</h3><p>属性选择器可以根据元素特定属性的来选择元素。 这样就可以不用借助于类或者id选择器。</p>
+<table>
+<thead>
+<tr>
+<th align="center">选择符</th>
+<th align="center">简介</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">E[att]</td>
+<td align="center">迭择具有att属性的E元素</td>
+</tr>
+<tr>
+<td align="center">E[att=”val”]</td>
+<td align="center">迭择具有att属性且属性値等于val的E元素</td>
+</tr>
+<tr>
+<td align="center">E[att^=”val”]</td>
+<td align="center">匹配具有att属性且値以val幵尖的E元素</td>
+</tr>
+<tr>
+<td align="center">E[att$=”val”]</td>
+<td align="center">匹配具有att 属性且値以val結尾的E元素</td>
+</tr>
+<tr>
+<td align="center">E[att*=”val”]</td>
+<td align="center">匹配具有att 属性且値中含有val的E元素</td>
+</tr>
+</tbody></table>
+<ul>
+<li>属性选择器，按照字面意思，都是根据标签中的属性来选择元素</li>
+<li>属性选择器可以根据元素特定属性的来选择元素。 这样就可以不用借助于类或者id选择器</li>
+<li>属性选择器也可以选择出来自定义的属性</li>
+<li>注意：类选择器、属性选择器、伪类选择器，权重为 10</li>
+</ul>
+<h3 id="2-3-结构伪类选择器"><a href="#2-3-结构伪类选择器" class="headerlink" title="2.3 结构伪类选择器"></a>2.3 结构伪类选择器</h3><ul>
+<li>结构伪类选择器主要根据文档结构来选择器元素， 常用于根据父级选择器里面的子元素</li>
+<li>ul li:first-child {…} 这个是选取的 ul 里面 第一个li</li>
+<li>ul li:last-child {…} 这个是选取的 ul 里面 最后一个li</li>
+<li>ul li:nth-child(2) {…} 这个是选取 ul 里面 第2个 li</li>
+<li>nth-child(n) {…}  这个用得最多</li>
+</ul>
+<p>n 可以是公式：常见的公式如下 ( 如果n是公式，则从0开始计算，但是第 0 个元素或者超出了元素的个数会被忽略 )</p>
+<table>
+<thead>
+<tr>
+<th align="center">公式</th>
+<th align="center">取值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">2n</td>
+<td align="center">偶数</td>
+</tr>
+<tr>
+<td align="center">2n+1</td>
+<td align="center">奇数</td>
+</tr>
+<tr>
+<td align="center">5n</td>
+<td align="center">5 10 15 …</td>
+</tr>
+<tr>
+<td align="center">n+5</td>
+<td align="center">从第五个开始（包括第五个）到最后</td>
+</tr>
+<tr>
+<td align="center">-n+5</td>
+<td align="center">前五个（包含第五个）</td>
+</tr>
+</tbody></table>
+<h3 id="2-4-nth-child和nth-of-type的区别"><a href="#2-4-nth-child和nth-of-type的区别" class="headerlink" title="2.4 nth-child和nth-of-type的区别"></a>2.4 nth-child和nth-of-type的区别</h3><ul>
+<li>E:first-of-type  选出指定元素的第一个孩子</li>
+<li>E:last-of-type   选出指定元素的最后一个孩子</li>
+<li>E:nth-child(n)     匹配父元素的第n个子元素E，也就是说，nth-child 对父元素里面所有孩子排序选择（序号是固定的）  先找到第n个孩子，然后看看是否和E匹配</li>
+<li>E:nth-of-type(n) 匹配同类型中的第n个同级兄弟元素E，也就是说，对父元素里面指定子元素进行排序选择。 先去匹配E ，然后再根据E 找第n个孩子</li>
+</ul>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><ul>
+<li>结构伪类选择器一般用于选择父级里面的第几个孩子</li>
+<li>nth-child 对父元素里面所有孩子排序选择（序号是固定的）  先找到第n个孩子，然后看看是否和E匹配</li>
+<li>nth-of-type 对父元素里面指定子元素进行排序选择。 先去匹配E ，然后再根据E 找第n个孩子</li>
+<li>关于 nth-child（n） 我们要知道 n 是从 0 开始计算的，要记住常用的公式</li>
+<li>如果是无序列表，我们肯定用 nth-child 更多</li>
+<li>类选择器、属性选择器、伪类选择器，权重为 10</li>
+</ul>
+<h3 id="2-4-伪元素选择器（重点）"><a href="#2-4-伪元素选择器（重点）" class="headerlink" title="2.4 伪元素选择器（重点）"></a>2.4 伪元素选择器（重点）</h3><p>伪元素选择器可以帮助我们利用CSS创建新标签元素，而不需要HTML标签，从而简化HTML结构。 </p>
+<table>
+<thead>
+<tr>
+<th align="center">选择符</th>
+<th align="center">简介</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">::before</td>
+<td align="center">在元素内部的前面插入内容</td>
+</tr>
+<tr>
+<td align="center">::after</td>
+<td align="center">在元素内部的后面插入内容</td>
+</tr>
+</tbody></table>
+<p>注意： </p>
+<ul>
+<li>before 和 after 创建一个元素，但是属于行内元素，before是插入在内容的前面，after是插入在内容的后面</li>
+<li>新创建的这个元素在文档树中是找不到的，所以我们称为伪元素</li>
+<li>语法：  element::before {}   </li>
+<li>before 和 after 必须有 content 属性 </li>
+<li>before 在父元素内容的前面创建元素，after 在父元素内容的后面插入元素</li>
+<li>伪元素选择器和标签选择器一样，权重为 1</li>
+</ul>
+<h3 id="2-5-CSS3-盒子模型"><a href="#2-5-CSS3-盒子模型" class="headerlink" title="2.5 CSS3 盒子模型"></a>2.5 CSS3 盒子模型</h3><p>CSS3 中可以通过 box-sizing 来指定盒模型，有2个值：即可指定为 content-box、border-box，这样我们 计算盒子大小的方式就发生了改变。<br>可以分成两种情况：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">1. box-sizing: content-box  盒子大小为 width + padding + border  （以前默认的） <br>2. box-sizing: border-box  盒子大小为 width<br></code></pre></td></tr></table></figure>
+<p>如果盒子模型我们改为了box-sizing: border-box  ， 那padding和border就不会撑大盒子了（前提padding 和border不会超过width宽度） </p>
+<h3 id="2-6-CSS3-其他特性（了解）"><a href="#2-6-CSS3-其他特性（了解）" class="headerlink" title="2.6 CSS3 其他特性（了解）"></a>2.6 CSS3 其他特性（了解）</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">1. 图片变模糊  <br>2. 计算盒子宽度 width: calc 函数<br></code></pre></td></tr></table></figure>
+<h4 id="CSS3滤镜filter"><a href="#CSS3滤镜filter" class="headerlink" title="CSS3滤镜filter:"></a>CSS3滤镜filter:</h4><p>filter CSS属性将模糊或颜色偏移等图形效果应用于元素。 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">filter:   函数();      例如： filter: blur(5px);     blur模糊处理  数值越大越模糊<br></code></pre></td></tr></table></figure>
+<h4 id="CSS3-calc-函数"><a href="#CSS3-calc-函数" class="headerlink" title="CSS3 calc 函数:"></a>CSS3 calc 函数:</h4><p>calc() 此CSS函数让你在声明CSS属性值时执行一些计算。 </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">width</span>: <span class="hljs-selector-tag">calc</span>(100% <span class="hljs-selector-tag">-</span> 80<span class="hljs-selector-tag">px</span>);<br></code></pre></td></tr></table></figure>
+<p>括号里面可以使用 + - *  / 来进行计算。 </p>
+<h3 id="2-7-CSS3-过渡（重点）"><a href="#2-7-CSS3-过渡（重点）" class="headerlink" title="2.7 CSS3 过渡（重点）"></a>2.7 CSS3 过渡（重点）</h3><p>过渡（transition)是CSS3中具有颠覆性的特征之一，我们可以在不使用 Flash 动画或 JavaScript 的情况下，当元素从一种样式变换为另一种样式时为元素添加效果。<br>过渡动画： 是从一个状态 渐渐的过渡到另外一个状态<br>可以让我们页面更好看，更动感十足，虽然 低版本浏览器不支持（ie9以下版本） 但是不会影响 页面布局。 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">transition: 要过渡的属性  花费时间  运动曲线  何时开始;<br></code></pre></td></tr></table></figure>
+<p>1.属性 ： 想要变化的 css 属性， 宽度高度 背景颜色 内外边距都可以 。如果想要所有的属性都 变化过渡， 写一个all 就可以。<br>2. 花费时间： 单位是 秒（必须写单位） 比如 0.5s<br>3. 运动曲线： 默认是 ease （可以省略）<br>4.何时开始 ：单位是 秒（必须写单位）可以设置延迟触发时间  默认是 0s  （可以省略） </p>
 ]]></content>
       <tags>
         <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
-    <title>hexo博客绑定自己域名</title>
-    <url>/2020/06/30/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E8%87%AA%E5%B7%B1%E5%9F%9F%E5%90%8D/</url>
-    <content><![CDATA[<p>1、在自己博客根目录下找到source文件，新建一个CNAME文件，没有任何后缀，写上自己的域名。<br>2、在git bash输入hexo d，重新部署到github。<br>3、在github上打开个人博客，点击Settings，下拉找到GitHub Pages，在Custom Chooser输入自己的域名，点击Save。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue响应式数组方法</title>
-    <url>/2020/07/09/Vue%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>Vue响应式数组方法有push、pop、shift、unshift 、splice、sort、reverse，通过索引值修改元素，不是响应式。</p>
+    <title>Vue小案例</title>
+    <url>/2020/07/07/Vue%E5%B0%8F%E6%A1%88%E4%BE%8B/</url>
+    <content><![CDATA[<p>使用Vue做一个小案例，点击哪个哪个变红。</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&lt;!DOCTYPE html&gt;<br>&lt;html lang&#x3D;&quot;en&quot;&gt;<br>&lt;head&gt;<br>    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;<br>    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;<br>    &lt;title&gt;Document&lt;&#x2F;title&gt;<br>    <br>&lt;&#x2F;head&gt;<br>&lt;body&gt;<br>    &lt;div id&#x3D;&quot;app&quot;&gt;<br>        &lt;ul&gt;<br>            &lt;li v-for&#x3D;&quot;item in letter&quot;&gt;&#123;&#123;item&#125;&#125;&lt;&#x2F;li&gt;<br>        &lt;&#x2F;ul&gt;<br>        &lt;button @click&#x3D;&quot;btnClick&quot;&gt;按钮&lt;&#x2F;button&gt;<br>    &lt;&#x2F;div&gt;<br>      &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>      &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>        const app &#x3D; new Vue(&#123;<br>          el: &#39;#app&#39;,<br>          data: &#123;<br>            letter:[&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;]<br>          &#125;,<br>          methods:&#123;<br>              btnClick()&#123;<br>                &#x2F;&#x2F; 1.push方法  可以添加多个元素<br>                &#x2F;&#x2F; this.letter.push(&#39;F&#39;)<br>                &#x2F;&#x2F; 2.pop方法  删除最后一个元素<br>                &#x2F;&#x2F; this.letters.pop()<br>                &#x2F;&#x2F; 3.shift   删除第一个元素<br>                &#x2F;&#x2F; this.letters.shift()<br>                &#x2F;&#x2F; 4.unshift  最前面添加元素,可以添加多个元素<br>                &#x2F;&#x2F; this.letters.unshift(&#39;a&#39;,&#39;b&#39;,&#39;c&#39;)<br>                &#x2F;&#x2F; 5.splice  可以删除，插入，替换元素 <br>                &#x2F;&#x2F; 5.1删除元素：<br>                &#x2F;&#x2F;    3个参数<br>                &#x2F;&#x2F;    第一位:从什么开始<br>                &#x2F;&#x2F;    第二位:删除几个,若没有写,则删除后面所有元素<br>                &#x2F;&#x2F; this.letter.splice(1,3)  从第一个开始，删除3位元素<br>                &#x2F;&#x2F; this.letter.splice(1)    从第一位开始，删除后面所有元素<br>                &#x2F;&#x2F; this.letter.splice(1,3,&#39;a&#39;,&#39;b&#39;) 从第一位开始,删除3个元素,添加两个元素a,b<br>                &#x2F;&#x2F; 5.2替换元素:<br>                &#x2F;&#x2F;    第二个参数,表示要替换几个元素,后面用于替换前面元素<br>                &#x2F;&#x2F; this.letter.splice(1,0,&#39;a&#39;,&#39;b&#39;)<br>                &#x2F;&#x2F; 5.3插入元素:<br>                &#x2F;&#x2F;    传入0,并且后面跟上要插入的元素<br>                &#x2F;&#x2F; this.letter.splice(1,0,&#39;a&#39;,&#39;b&#39;)<br>                &#x2F;&#x2F; 6.sort   排序<br>                &#x2F;&#x2F; this.letters.sort()<br>                &#x2F;&#x2F; 7.reverse  反转 <br>                &#x2F;&#x2F; this.letters.reverse()<br>                &#x2F;&#x2F; 通过索引值修改数组中的元素，不是响应式，可以改为this.letter.splice(0,1,&#39;bbb&#39;)<br>                &#x2F;&#x2F; this.letter[0]&#x3D;&#39;bbb&#39;<br>              &#125;<br>          &#125;<br>      &#125;)<br>      &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br>&lt;&#x2F;html&gt;<br></code></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>markdown代码块高亮提示</title>
-    <url>/2020/06/29/disanpian/</url>
-    <content><![CDATA[<p>三种方法</p>
-<a id="more"></a>
-<p>第一种：</p>
-<pre><code>&lt;pro&gt;&lt;code&gt;代码&lt;/code&gt;&lt;/pro&gt;</code></pre><p>第二种：</p>
-<pre><code>```代码类型 （代码）```</code></pre><p>第三种：</p>
-<p>空一行<br>(4个空格)代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>    &lt;div id&#x3D;&quot;app&quot;&gt;<br>      &lt;ul&gt;<br>        &lt;li v-for&#x3D;&quot;(item,index) in names&quot; :class&#x3D;&quot;&#123;active:currentIndex&#x3D;&#x3D;&#x3D;index&#125;&quot; @click&#x3D;&quot;isClick(index)&quot;&gt;&#123;&#123;item&#125;&#125;&lt;&#x2F;li&gt;<br>      &lt;&#x2F;ul&gt;<br>    &lt;&#x2F;div&gt;<br>        &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>          const app &#x3D; new Vue(&#123;<br>            el: &#39;#app&#39;,<br>            data: &#123;<br>                names:[&#39;jack&#39;,&#39;join&#39;,&#39;carry&#39;,&#39;wkjr&#39;],<br>                currentIndex:0<br>            &#125;,<br>           methods:&#123;<br>               isClick(index)&#123;<br>                   this.currentIndex&#x3D;index  &#x2F;&#x2F;根据点击将index值赋给currentIndex<br>               &#125;<br><br>           &#125;<br>        &#125;)<br>        &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
+<p>上述代码会使第一个一直为红色，可以将currentIndex的初始值改为负数。</p>
 ]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
   </entry>
   <entry>
     <title>Vue的条件判断</title>
@@ -135,6 +323,42 @@
       </tags>
   </entry>
   <entry>
+    <title>markdown代码块高亮提示</title>
+    <url>/2020/06/29/disanpian/</url>
+    <content><![CDATA[<p>三种方法</p>
+<a id="more"></a>
+<p>第一种：</p>
+<pre><code>&lt;pro&gt;&lt;code&gt;代码&lt;/code&gt;&lt;/pro&gt;</code></pre><p>第二种：</p>
+<pre><code>```代码类型 （代码）```</code></pre><p>第三种：</p>
+<p>空一行<br>(4个空格)代码</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客绑定自己域名</title>
+    <url>/2020/06/30/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E8%87%AA%E5%B7%B1%E5%9F%9F%E5%90%8D/</url>
+    <content><![CDATA[<p>1、在自己博客根目录下找到source文件，新建一个CNAME文件，没有任何后缀，写上自己的域名。<br>2、在git bash输入hexo d，重新部署到github。<br>3、在github上打开个人博客，点击Settings，下拉找到GitHub Pages，在Custom Chooser输入自己的域名，点击Save。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>v-show和v-if的区别</title>
+    <url>/2020/07/05/v-show%E5%92%8Cv-if%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<p>v-if和v-show用法非常相似，也决定一个元素是否被渲染</p>
+<a id="more"></a>
+<p>对比：<br>    v-if:当条件为false时，包含v-if指令的元素，根本不会存在于DOM中<br>    v-show:当条件为false时，v-show只是给我们的元素添加一个行内样式：display:none，元素还是存在DOM里面<br>如何选择：<br>    当需要在显示和隐藏之间切换频繁使用v-show，当只有一次切换使用v-if</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>    &lt;div id&#x3D;&quot;app&quot;&gt;<br>        &lt;h1 v-if&#x3D;&quot;isShow&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h1&gt;<br>        &lt;h1 v-show&#x3D;&quot;isShow&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h1&gt;<br>      &lt;&#x2F;div&gt;<br>        &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>          const app &#x3D; new Vue(&#123;<br>            el: &#39;#app&#39;,<br>            data: &#123;<br>            message:&#39;你好&#39;,<br>              isShow:false<br>            &#125;<br>        &#125;)<br>        &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
+<p>下面是F12元素效果<br><img src="https://github.com/Sqiannan/Sqiannan.github.io/blob/master/头像.jpg" width="50%"></p>
+]]></content>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>echarts 各个配置项详细说明总结</title>
     <url>/2020/07/08/echarts%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>ECharts 提供了常规的折线图、柱状图、散点图、饼图、K线图，用于统计的盒形图，用于地理数据可视化的地图、热力图、线图，用于关系数据可视化的关系图、treemap、旭日图，多维数据可视化的平行坐标，还有用于 BI 的漏斗图，仪表盘，并且支持图与图之间的混搭。<br><a href="https://echarts.apache.org/" target="_blank" rel="noopener">https://echarts.apache.org/</a></p>
@@ -149,10 +373,34 @@
       </tags>
   </entry>
   <entry>
-    <title>前端知识</title>
-    <url>/2020/06/30/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/</url>
-    <content><![CDATA[<p><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions" target="_blank" rel="noopener">https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions</a></p>
+    <title>CSS的布局方法</title>
+    <url>/2020/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>两列布局（左固定，右自适应和左自适应，右固定）和三列布局（两侧定宽，中间自适应）</p>
+<a id="more"></a>
+<h2 id="1、-两列布局："><a href="#1、-两列布局：" class="headerlink" title="1、    两列布局："></a>1、    两列布局：</h2><p>1.1    左边宽度固定，右边宽度自适应<br>第一种方法：左边设置浮动，右边设置margin-left<br>Js代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.left&#123; <br>  width: 400px;<br>  height:100px;<br>  background-color: red;<br>  float:left;<br>&#125;<br>.right&#123;<br>  background-color: blue;<br>  margin-left: 400px;<br>  height:100px;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Html代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"outer"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>第二种方法：设置相对定位和绝对定位</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.outer&#123; <br>  height:100px;<br>  position:relative;<br>  border: 1px solid red;<br>&#125;<br>.left&#123;<br>  position: absolute;<br>  left: 0;<br>  top: 0;<br>  width: 200px;<br>  height: 100px;<br>  background-color: antiquewhite;<br>&#125;<br>.right&#123;<br>  margin-left: 200px;<br>  height: 100px;<br>  background-color: aquamarine;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>1.2    右边宽度固定，左边宽度自适应：<br>第一种：左右都浮动</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.left&#123;<br>  height:100px;<br>  width: 100%;<br>  background-color: aqua;<br>  float: left;<br>  margin-right: -400px;<br>&#125;<br>.right&#123; <br>  width: 400px;<br>  height: 100px;<br>  background-color:blue;<br>  float: right;<br>  margin-left: -400px;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>第二种：父元素相对，右边绝对，左边margin-right</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.outer&#123;<br>  position: relative;<br>&#125;<br>.left&#123;<br>  margin-right: 400px;<br>  height: 300px;<br>  background-color: red;<br>&#125;<br>.right&#123;<br>  position: absolute;<br>  top: 0;<br>  right: 0;<br>  height: 300px;<br>  width: 400px;<br>  background-color: blue;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="2、-三栏"><a href="#2、-三栏" class="headerlink" title="2、    三栏"></a>2、    三栏</h2><p>2.1 两侧定宽，中间自适应<br>第一种方法：左右设置为绝对定位，中间使用margin属性设置留出左右两边的距离，中间设置为100%</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">*&#123;<br>  margin: 0;<br>&#125;<br>.left&#123;<br>  width: 100px;<br>  height: 400px;<br>  background-color: red;<br>  position: absolute;<br>  top: 0;<br>  left: 0;<br>&#125;<br>.center&#123;<br>  margin: 0 100px;  <br>  height: 400px; <br>  width: 100%;<br>  background-color: #000000;<br>&#125;<br>.right&#123;<br>  width: 100px;<br>  height: 400px;<br>  background-color: red;<br>  position: absolute;<br>  top: 0;<br>  right: 0;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Html代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"center"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>第二种方法：左边左浮动，右边右浮动，中间设置margin，html代码里面中间栏是最后一个。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.left&#123; <br>  width: 100px;<br>  height: 400px;<br>  background-color: red;<br>  float: left;<br>&#125;<br>.center&#123;<br>  height: 400px;<br>  width: 100%;<br>  background-color: #000000;<br>  margin:0 100px;<br>&#125;<br>.right&#123;<br>  width: 100px;<br>  height: 400px;<br>  background-color: red;<br>  float: right;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>html代码：</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></code></pre>
 ]]></content>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
   </entry>
   <entry>
     <title>事件冒泡</title>
@@ -161,6 +409,12 @@
       <tags>
         <tag>学习笔记</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>前端知识</title>
+    <url>/2020/06/30/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/</url>
+    <content><![CDATA[<p><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions" target="_blank" rel="noopener">https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions</a></p>
+]]></content>
   </entry>
   <entry>
     <title>浮动及带来的影响</title>
@@ -206,19 +460,6 @@
       </tags>
   </entry>
   <entry>
-    <title>v-show和v-if的区别</title>
-    <url>/2020/07/05/v-show%E5%92%8Cv-if%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<p>v-if和v-show用法非常相似，也决定一个元素是否被渲染</p>
-<a id="more"></a>
-<p>对比：<br>    v-if:当条件为false时，包含v-if指令的元素，根本不会存在于DOM中<br>    v-show:当条件为false时，v-show只是给我们的元素添加一个行内样式：display:none，元素还是存在DOM里面<br>如何选择：<br>    当需要在显示和隐藏之间切换频繁使用v-show，当只有一次切换使用v-if</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">&lt;body&gt;<br>    &lt;div id&#x3D;&quot;app&quot;&gt;<br>        &lt;h1 v-if&#x3D;&quot;isShow&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h1&gt;<br>        &lt;h1 v-show&#x3D;&quot;isShow&quot;&gt;&#123;&#123;message&#125;&#125;&lt;&#x2F;h1&gt;<br>      &lt;&#x2F;div&gt;<br>        &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;vue&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;<br>        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;<br>          const app &#x3D; new Vue(&#123;<br>            el: &#39;#app&#39;,<br>            data: &#123;<br>            message:&#39;你好&#39;,<br>              isShow:false<br>            &#125;<br>        &#125;)<br>        &lt;&#x2F;script&gt;<br>&lt;&#x2F;body&gt;<br></code></pre></td></tr></table></figure>
-<p>下面是F12元素效果<br><img src="https://github.com/Sqiannan/Sqiannan.github.io/blob/master/头像.jpg" width="50%"></p>
-]]></content>
-      <tags>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo yilia 博客增加菜单分类</title>
     <url>/2020/06/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<p>基于hexo+yilia主题搭建的博客，如果要添加菜单分类，需要在根目录下执行new page “分类名字”，然后在根目录下的_config.yml文件中的menu下添加类名。</p>
@@ -240,36 +481,6 @@
 ]]></content>
       <tags>
         <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS的布局方法</title>
-    <url>/2020/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>两列布局（左固定，右自适应和左自适应，右固定）和三列布局（两侧定宽，中间自适应）</p>
-<a id="more"></a>
-<h2 id="1、-两列布局："><a href="#1、-两列布局：" class="headerlink" title="1、    两列布局："></a>1、    两列布局：</h2><p>1.1    左边宽度固定，右边宽度自适应<br>第一种方法：左边设置浮动，右边设置margin-left<br>Js代码：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.left&#123; <br>  width: 400px;<br>  height:100px;<br>  background-color: red;<br>  float:left;<br>&#125;<br>.right&#123;<br>  background-color: blue;<br>  margin-left: 400px;<br>  height:100px;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>Html代码：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"outer"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p>第二种方法：设置相对定位和绝对定位</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.outer&#123; <br>  height:100px;<br>  position:relative;<br>  border: 1px solid red;<br>&#125;<br>.left&#123;<br>  position: absolute;<br>  left: 0;<br>  top: 0;<br>  width: 200px;<br>  height: 100px;<br>  background-color: antiquewhite;<br>&#125;<br>.right&#123;<br>  margin-left: 200px;<br>  height: 100px;<br>  background-color: aquamarine;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>1.2    右边宽度固定，左边宽度自适应：<br>第一种：左右都浮动</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.left&#123;<br>  height:100px;<br>  width: 100%;<br>  background-color: aqua;<br>  float: left;<br>  margin-right: -400px;<br>&#125;<br>.right&#123; <br>  width: 400px;<br>  height: 100px;<br>  background-color:blue;<br>  float: right;<br>  margin-left: -400px;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>第二种：父元素相对，右边绝对，左边margin-right</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.outer&#123;<br>  position: relative;<br>&#125;<br>.left&#123;<br>  margin-right: 400px;<br>  height: 300px;<br>  background-color: red;<br>&#125;<br>.right&#123;<br>  position: absolute;<br>  top: 0;<br>  right: 0;<br>  height: 300px;<br>  width: 400px;<br>  background-color: blue;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="2、-三栏"><a href="#2、-三栏" class="headerlink" title="2、    三栏"></a>2、    三栏</h2><p>2.1 两侧定宽，中间自适应<br>第一种方法：左右设置为绝对定位，中间使用margin属性设置留出左右两边的距离，中间设置为100%</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">*&#123;<br>  margin: 0;<br>&#125;<br>.left&#123;<br>  width: 100px;<br>  height: 400px;<br>  background-color: red;<br>  position: absolute;<br>  top: 0;<br>  left: 0;<br>&#125;<br>.center&#123;<br>  margin: 0 100px;  <br>  height: 400px; <br>  width: 100%;<br>  background-color: #000000;<br>&#125;<br>.right&#123;<br>  width: 100px;<br>  height: 400px;<br>  background-color: red;<br>  position: absolute;<br>  top: 0;<br>  right: 0;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>Html代码：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"center"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p>第二种方法：左边左浮动，右边右浮动，中间设置margin，html代码里面中间栏是最后一个。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">.left&#123; <br>  width: 100px;<br>  height: 400px;<br>  background-color: red;<br>  float: left;<br>&#125;<br>.center&#123;<br>  height: 400px;<br>  width: 100%;<br>  background-color: #000000;<br>  margin:0 100px;<br>&#125;<br>.right&#123;<br>  width: 100px;<br>  height: 400px;<br>  background-color: red;<br>  float: right;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>html代码：</p>
-<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
-<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
-<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></code></pre>
-]]></content>
-      <tags>
-        <tag>学习笔记</tag>
       </tags>
   </entry>
 </search>
