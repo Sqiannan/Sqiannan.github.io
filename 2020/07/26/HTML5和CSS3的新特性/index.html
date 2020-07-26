@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>溢出文字省略号显示 | 博客</title>
+  <title>HTML5和CSS3的新特性 | 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="分为两种情况：单行文本溢出显示省略号、多行文本溢出显示省略号。">
+  <meta name="description" content="HTML5 的新增特性主要是针对于以前的不足，增加了一些新的标签、新的表单和新的表单属性等。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="溢出文字省略号显示">
-<meta property="og:url" content="http://yoursite.com/2020/07/14/%E6%BA%A2%E5%87%BA%E6%96%87%E5%AD%97%E7%9C%81%E7%95%A5%E5%8F%B7%E6%98%BE%E7%A4%BA/index.html">
+<meta property="og:title" content="HTML5和CSS3的新特性">
+<meta property="og:url" content="http://yoursite.com/2020/07/26/HTML5%E5%92%8CCSS3%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="分为两种情况：单行文本溢出显示省略号、多行文本溢出显示省略号。">
-<meta property="article:published_time" content="2020-07-14T07:51:05.000Z">
-<meta property="article:modified_time" content="2020-07-14T08:02:23.155Z">
+<meta property="og:description" content="HTML5 的新增特性主要是针对于以前的不足，增加了一些新的标签、新的表单和新的表单属性等。">
+<meta property="article:published_time" content="2020-07-26T05:07:48.000Z">
+<meta property="article:modified_time" content="2020-07-26T05:42:00.628Z">
 <meta property="article:author" content="邵倩楠">
-<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="博客" type="application/atom+xml">
@@ -148,33 +148,56 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-溢出文字省略号显示" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-HTML5和CSS3的新特性" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      溢出文字省略号显示
+      HTML5和CSS3的新特性
     </h1>
   
 
         
-        <a href="/2020/07/14/%E6%BA%A2%E5%87%BA%E6%96%87%E5%AD%97%E7%9C%81%E7%95%A5%E5%8F%B7%E6%98%BE%E7%A4%BA/" class="archive-article-date">
-  	<time datetime="2020-07-14T07:51:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
+        <a href="/2020/07/26/HTML5%E5%92%8CCSS3%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7/" class="archive-article-date">
+  	<time datetime="2020-07-26T05:07:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>分为两种情况：单行文本溢出显示省略号、多行文本溢出显示省略号。</p>
+        <p>HTML5 的新增特性主要是针对于以前的不足，增加了一些新的标签、新的表单和新的表单属性等。</p>
 <a id="more"></a>
-<h3 id="单行文本溢出显示省略号"><a href="#单行文本溢出显示省略号" class="headerlink" title="单行文本溢出显示省略号"></a>单行文本溢出显示省略号</h3><p>必须满足三个条件 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plain">&#x2F;*1. 先强制一行内显示文本*&#x2F;   <br>white-space: nowrap;  （ 默认 normal 自动换行）  <br>&#x2F;*2. 超出的部分隐藏*&#x2F;    <br>overflow: hidden;  <br>&#x2F;*3. 文字用省略号替代超出的部分*&#x2F;    <br>text-overflow: ellipsis;<br></code></pre></td></tr></table></figure>
-<h3 id="多行文本溢出显示省略号"><a href="#多行文本溢出显示省略号" class="headerlink" title="多行文本溢出显示省略号"></a>多行文本溢出显示省略号</h3><p>多行文本溢出显示省略号，有较大兼容性问题，适合于webKit浏览器或移动端（移动端大部分是webkit内核） </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plain">overflow: hidden; <br>text-overflow: ellipsis; <br>&#x2F;* 弹性伸缩盒子模型显示 *&#x2F; <br>display: -webkit-box; <br>&#x2F;* 限制在一个块元素显示的文本的行数 *&#x2F; <br>-webkit-line-clamp: 2; <br>&#x2F;* 设置或检索伸缩盒对象的子元素的排列方式 *&#x2F; <br>-webkit-box-orient: vertical;<br></code></pre></td></tr></table></figure>
-<p>更推荐让后台人员来做这个效果，因为后台人员可以设置显示多少个字，操作更简单。</p>
+<h2 id="1-HTML5的新特性"><a href="#1-HTML5的新特性" class="headerlink" title="1.HTML5的新特性"></a>1.HTML5的新特性</h2><p>这些新特性都有兼容性问题，基本是 IE9+ 以上版本的浏览器才支持，如果不考虑兼容性问题，可以大量使用这些新特性。 </p>
+<h3 id="1-1-HTML5-新增的语义化标签"><a href="#1-1-HTML5-新增的语义化标签" class="headerlink" title="1.1 HTML5 新增的语义化标签"></a>1.1 HTML5 新增的语义化标签</h3><p>以前布局，我们基本用 div 来做。div 对于搜索引擎来说，是没有语义的。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;div class&#x3D;&quot;header&quot;&gt; &lt;&#x2F;div&gt; <br>&lt;div class&#x3D;&quot;nav&quot;&gt; &lt;&#x2F;div&gt; <br>&lt;div class&#x3D;&quot;content&quot;&gt; &lt;&#x2F;div&gt; <br>&lt;div class&#x3D;&quot;footer&quot;&gt; &lt;&#x2F;div&gt;<br></code></pre></td></tr></table></figure>
+<p>新增的语义化标签 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;header&gt;：头部标签<br>&lt;nav&gt;：导航标签<br>&lt;article&gt;：内容标签<br>&lt;section&gt;：定义文档某个区域<br>&lt;aside&gt;：侧边栏标签<br>&lt;footer&gt;：尾部标签<br></code></pre></td></tr></table></figure>
+<p>注意：</p>
+<ul>
+<li>这种语义化标准主要是针对搜索引擎的</li>
+<li>这些新标签页面中可以使用多次</li>
+<li>在 IE9 中，需要把这些元素转换为块级元素</li>
+<li>其实，我们移动端更喜欢使用这些标签</li>
+<li>HTML5 还增加了很多其他标签，后面再补充</li>
+</ul>
+<h3 id="1-2-HTML5-新增的多媒体标签"><a href="#1-2-HTML5-新增的多媒体标签" class="headerlink" title="1.2 HTML5 新增的多媒体标签"></a>1.2 HTML5 新增的多媒体标签</h3><p>新增的多媒体标签主要包含两个：</p>
+<ol>
+<li>音频：&lt;audio&gt;</li>
+<li>视频：&lt;video&gt;<br>使用它们可以很方便的在页面中嵌入音频和视频，而不再去使用 flash 和其他浏览器插件。 <h4 id="1-视频-lt-video-gt"><a href="#1-视频-lt-video-gt" class="headerlink" title="1. 视频&lt;video&gt;"></a>1. 视频&lt;video&gt;</h4>语法 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;video src&#x3D;&quot;文件地址&quot; controls&#x3D;&quot;controls&quot;&gt;&lt;&#x2F;video&gt; <br> &lt;video  controls&#x3D;&quot;controls&quot;  width&#x3D;&quot;300&quot;&gt; <br>     &lt;source src&#x3D;&quot;move.ogg&quot; type&#x3D;&quot;video&#x2F;ogg&quot; &gt;<br></code></pre></td></tr></table></figure>
+<h4 id="2-音频-lt-audio-gt"><a href="#2-音频-lt-audio-gt" class="headerlink" title="2. 音频&lt;audio&gt;"></a>2. 音频&lt;audio&gt;</h4>语法 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;audio src&#x3D;&quot;文件地址&quot; controls&#x3D;&quot;controls&quot;&gt;&lt;&#x2F;audio&gt; <br> &lt; audio controls&#x3D;&quot;controls&quot;  &gt; <br>     &lt;source src&#x3D;&quot;happy.mp3&quot; type&#x3D;&quot;audio&#x2F;mpeg&quot; &gt;<br></code></pre></td></tr></table></figure>
+<h4 id="3-多媒体标签总结"><a href="#3-多媒体标签总结" class="headerlink" title="3.多媒体标签总结"></a>3.多媒体标签总结</h4></li>
+</ol>
+<ul>
+<li>音频标签和视频标签使用方式基本一致</li>
+<li>浏览器支持情况不同</li>
+<li>谷歌浏览器把音频和视频自动播放禁止了</li>
+<li>我们可以给视频标签添加 muted 属性来静音播放视频，音频不可以（可以通过JavaScript解决）</li>
+<li>视频标签是重点，我们经常设置自动播放，不使用 controls 控件，循环和设置大小属性  <h3 id="1-3-HTML5-新增的-input-类型"><a href="#1-3-HTML5-新增的-input-类型" class="headerlink" title="1.3 HTML5 新增的 input 类型"></a>1.3 HTML5 新增的 input 类型</h3>标题 | 标题 </li>
+<li>| -<br>文本 | 文本 |<br>文本 | 文本 |</li>
+</ul>
 
       
 
@@ -221,7 +244,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
         		</li>
       		
 		</ul>
@@ -277,7 +300,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/14/%E6%BA%A2%E5%87%BA%E6%96%87%E5%AD%97%E7%9C%81%E7%95%A5%E5%8F%B7%E6%98%BE%E7%A4%BA/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/26/HTML5%E5%92%8CCSS3%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -291,18 +314,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/26/HTML5%E5%92%8CCSS3%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          HTML5和CSS3的新特性
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/12/%E6%B5%AE%E5%8A%A8%E5%8F%8A%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%BD%B1%E5%93%8D/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">浮动及带来的影响</div>
+    <a href="/2020/07/14/%E6%BA%A2%E5%87%BA%E6%96%87%E5%AD%97%E7%9C%81%E7%95%A5%E5%8F%B7%E6%98%BE%E7%A4%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">溢出文字省略号显示</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -341,7 +355,7 @@
 <script src="https://www.wenjunjiang.win/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2020/07/14/%E6%BA%A2%E5%87%BA%E6%96%87%E5%AD%97%E7%9C%81%E7%95%A5%E5%8F%B7%E6%98%BE%E7%A4%BA/",
+  id: "http://yoursite.com/2020/07/26/HTML5%E5%92%8CCSS3%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7/",
   owner: 'Sqiannan',
   repo: 'sqiannan.github.io',
   oauth: {
