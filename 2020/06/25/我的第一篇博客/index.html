@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="博客">
 <meta property="og:description" content="两列布局（左固定，右自适应和左自适应，右固定）和三列布局（两侧定宽，中间自适应）">
 <meta property="article:published_time" content="2020-06-25T11:32:48.000Z">
-<meta property="article:modified_time" content="2020-06-29T15:24:09.268Z">
+<meta property="article:modified_time" content="2020-08-02T07:52:43.375Z">
 <meta property="article:author" content="邵倩楠">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
@@ -170,7 +170,7 @@
       
         <p>两列布局（左固定，右自适应和左自适应，右固定）和三列布局（两侧定宽，中间自适应）</p>
 <a id="more"></a>
-<h2 id="1、-两列布局："><a href="#1、-两列布局：" class="headerlink" title="1、    两列布局："></a>1、    两列布局：</h2><p>1.1    左边宽度固定，右边宽度自适应<br>第一种方法：左边设置浮动，右边设置margin-left<br>Js代码：</p>
+<h2 id="1、-两列布局："><a href="#1、-两列布局：" class="headerlink" title="1、    两列布局："></a>1、    两列布局：</h2><p>1.1    左边宽度固定，右边宽度自适应<br>第一种方法：左边设置浮动，右边设置margin-left<br>css代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html">.left&#123; <br>  width: 400px;<br>  height:100px;<br>  background-color: red;<br>  float:left;<br>&#125;<br>.right&#123;<br>  background-color: blue;<br>  margin-left: 400px;<br>  height:100px;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>Html代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"outer"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
