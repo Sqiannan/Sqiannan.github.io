@@ -8,18 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>git上传文件到github | 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123">
+  <meta name="description" content="需要先申请好github账号，下载git。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git上传文件到github">
 <meta property="og:url" content="http://yoursite.com/2020/08/01/git%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0github/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="123">
-<meta property="og:image" content="http://yoursite.com/.com//1.png">
+<meta property="og:description" content="需要先申请好github账号，下载git。">
 <meta property="article:published_time" content="2020-08-01T10:59:22.000Z">
-<meta property="article:modified_time" content="2020-08-01T11:12:59.814Z">
+<meta property="article:modified_time" content="2020-08-02T07:07:14.029Z">
 <meta property="article:author" content="邵倩楠">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/.com//1.png">
   
     <link rel="alternative" href="/atom.xml" title="博客" type="application/atom+xml">
   
@@ -169,7 +168,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>123<br><img src="/.com//1.png" alt></p>
+        <p>需要先申请好github账号，下载git。</p>
+<a id="more"></a>
+<p>1.登录github，新建repository，命名，勾选initalize this repository with a README<br>2.打开settings，找到Github Pages设置，Sorce从None换为master<br>3.页面刷新，Github Pages处多一行网址</p>
+<h4 id="git操作"><a href="#git操作" class="headerlink" title="git操作"></a>git操作</h4><p>1.选择一个文件夹，命名，进入后右键选择git bush here<br>2.创建名为test的文件夹（可自由命名）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">mkdir test<br></code></pre></td></tr></table></figure>
+<p>进入test文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">cd test<br></code></pre></td></tr></table></figure>
+<p>克隆test repository 到文件夹test（后面网址是Github Pages处网址）,此步需进入新的文件夹，成功后test文件会多一个README.md文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">git clone https:&#x2F;&#x2F;github.com&#x2F;Sqiannan&#x2F;<br></code></pre></td></tr></table></figure>
+<p>3.把自己的网页文件复制到test文件内（跟.git一个目录下）<br>4.执行命令<br>初始化，列出所有改动文件，会标记为红色</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">git status<br></code></pre></td></tr></table></figure>
+<p>添加当前目录下的所有文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">git add .<br></code></pre></td></tr></table></figure>
+<p>如果文件变绿，表示它们已经准备好被提交了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">git status<br></code></pre></td></tr></table></figure>
+<p>5.上传远程master分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">git commit -m &quot;modify&quot;<br>git pull<br>git push<br></code></pre></td></tr></table></figure>
+<p>6.打开网址后面加上传的html文件名，完成</p>
 
       
 
@@ -211,6 +227,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
